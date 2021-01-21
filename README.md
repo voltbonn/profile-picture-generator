@@ -1,1 +1,0 @@
-profile-picture-generator
