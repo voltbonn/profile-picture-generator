@@ -27,10 +27,17 @@ function App() {
                 offscreenCanvas.width = frameSize
                 offscreenCanvas.height = frameSize
 
-
-                const width = frameSize
-                const height = (img.height / img.width) * frameSize
                 const offscreenCanvas_ctx = offscreenCanvas.getContext('2d', { alpha: true })
+
+                let width, height;
+                if (img.width < img.height) {
+                    height = (img.height / img.width) * frameSize
+                    width = frameSize
+                } else {
+                    height = frameSize
+                    width = (img.width / img.height) * frameSize
+                }
+                
                 offscreenCanvas_ctx.drawImage(
                     img,
                     (frameSize - width) / 2,
