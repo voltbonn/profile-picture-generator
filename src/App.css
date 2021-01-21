@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 
+h2{
+    margin: 10vh 0 2vh 0;
+    font-size: calc(10px + 4vmin);
+}
+
 .HeaderImage{
     height: calc(10px + 30vmin);
     max-width: 100%;
