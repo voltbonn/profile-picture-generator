@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import download from 'downloadjs'
 import FrameChooser from './FrameChooser.js'
+import HeaderImage from './HeaderImage.svg'
 
 import mergeImages from 'merge-images'
 
@@ -58,8 +59,8 @@ function App() {
 return (
     <div className="App">
         <header className="App-header">
-            <label>Load an Image:</label>
             <input type="file" onChange={handleImage} />
+        <img src={HeaderImage} className="HeaderImage" />
 
             <img src={combinedImage} className="App-logo" alt="Finished Frame" />
 

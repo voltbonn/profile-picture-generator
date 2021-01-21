@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+
+.HeaderImage{
+    height: calc(10px + 30vmin);
+    max-width: 100%;
+}
 }
 
 .App-logo {
