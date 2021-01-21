@@ -33,8 +33,34 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+button,
+.labelButton{
+    outline: none;
+    border: none;
+    margin: 2vh;
+    padding: 1vh 2vh;
+    font-size: calc(10px + 2vmin);
+    font-weight: bold;
+    cursor: pointer;
+
+    background: white;
+    color: var(--volt-purple);
+    transition: transform 0.2s ease;
+}
+button:hover,
+.labelButton:hover{
+    transform-origin: center center;
+    transform: scale(1.05);
 }
 
 .App-link {
   color: #61dafb;
+.labelButton img{
+    display: inline;
+    height: calc(10px + 4vmin);
+    vertical-align: middle;
+    margin: 0 2vh 0 -1vh;
+}
+.labelButton span{
+    vertical-align: middle;
 }
