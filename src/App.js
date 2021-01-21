@@ -58,7 +58,6 @@ function App() {
 
 return (
     <div className="App">
-            <input type="file" onChange={handleImage} />
         <img src={HeaderImage} className="HeaderImage" />
 
         <h2>Choose your Photo:</h2>
