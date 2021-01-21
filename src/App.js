@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import download from 'downloadjs'
+import { useDropzone } from 'react-dropzone'
 import FrameChooser from './FrameChooser.js'
 import HeaderImage from './HeaderImage.svg'
 
@@ -18,7 +19,8 @@ function App() {
         setFrameURL(newFrameURL)
     }, [setFrameURL])
 
-    const handleImage = useCallback(files_event => {
+
+    const handleReadFile = useCallback(file => {
         const reader = new FileReader()
         reader.onload = reader_event => {
             const img = new Image()
@@ -52,8 +54,24 @@ function App() {
             img.src = reader_event.target.result
             setOriginalPhoto(reader_event.target.result)
         }
-        reader.readAsDataURL(files_event.target.files[0])
-    }, [setPhoto])
+        reader.readAsDataURL(file)
+    }, [])
+
+    const handleImage = useCallback(files_event => {
+        handleReadFile(files_event.target.files[0])
+    }, [handleReadFile])
+
+    const onDrop = useCallback(acceptedFiles => {
+        handleReadFile(acceptedFiles[0])
+    }, [handleReadFile])
+
+    const { isDragActive, getRootProps } = useDropzone({
+        onDrop,
+        accept: 'image/*',
+        maxFiles: 1,
+        noKeyboard: true,
+    })
+
 
     useEffect(() => {
         mergeImages([
@@ -66,8 +84,12 @@ function App() {
 
 
 return (
-    <div className="App">
+    <div className="App" {...getRootProps()}>
         <img src={HeaderImage} className="HeaderImage" alt="Volt Logo" />
+
+        <div className={isDragActive ? 'droparea active' : 'droparea'}>
+            Drop your photo here ...
+        </div>
 
         <h2>Choose your Photo:</h2>
         <p>It should best be a square image or your face in the middle. The photo is not saved and never leaves your computer.</p>
