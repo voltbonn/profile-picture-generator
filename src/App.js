@@ -58,15 +58,13 @@ function App() {
 
 return (
     <div className="App">
-        <header className="App-header">
             <input type="file" onChange={handleImage} />
         <img src={HeaderImage} className="HeaderImage" />
 
             <img src={combinedImage} className="App-logo" alt="Finished Frame" />
 
-            <button onClick={() => download(combinedImage, "volt-profile-picture.png", "image/png")}>Download Profile Picture</button>
-        </header>
         <FrameChooser onFrameChange={handleFrameURL} />
+        <button onClick={() => download(combinedImage, "volt-profile-picture.png", "image/png")}>Download Profile Picture</button>
     </div>
 )
 }
