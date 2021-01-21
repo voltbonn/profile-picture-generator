@@ -66,8 +66,8 @@ return (
         <p>It should best be a square image or your face in the middle. The photo is not saved and never leaves your computer.</p>
 
         <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
-            <span>Load Photo</span>
             {!!photo ? <img src={originalPhoto} alt="Preview" /> : null}
+            <span>{!!photo ? 'Change Photo' : 'Load Photo'}</span>
             <input onChange={handleImage} type="file" accept="image/*" style={{display: 'none'}} />
         </label>
 
