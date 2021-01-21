@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
-import download from 'downloadjs'
 import { useDropzone } from 'react-dropzone'
 import FrameChooser from './FrameChooser.js'
 import HeaderImage from './HeaderImage.svg'
@@ -107,7 +106,9 @@ function App() {
 
             <h2>Download your Photo:</h2>
             <img src={combinedImage} className="FinishedFrame" alt="Finished Frame" />
-            <button onClick={() => download(combinedImage, "volt-profile-picture.png", "image/png")}>Download Profile Picture</button>
+            <a download="volt-profile-picture.png" href={combinedImage} target="_blank" rel="noreferrer">
+                <button>Download Profile Picture</button>
+            </a>
         </div>
     )
 }
