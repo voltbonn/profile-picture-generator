@@ -85,22 +85,22 @@ function App() {
     return (
         <div className="App" {...getRootProps()}>
             <img src={HeaderImage} className="HeaderImage" alt="Volt Logo" />
-    
+
             <div className={isDragActive ? 'droparea active' : 'droparea'}>
                 Drop your photo here ...
             </div>
-    
+
             <h2>Choose your Photo:</h2>
             <p>It should best be a square image or your face in the middle. The photo is not saved and never leaves your computer.</p>
-    
+
             <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
                 {!!photo ? <img src={originalPhoto} alt="Preview" /> : null}
                 <span>{!!photo ? 'Change Photo' : 'Load Photo'}</span>
                 <input onChange={handleImage} type="file" accept="image/*" style={{display: 'none'}} />
             </label>
-    
+
             <FrameChooser onFrameChange={handleFrameURL} />
-               
+
             <h2>Download your Photo:</h2>
             <img src={combinedImage} className="FinishedFrame" alt="Finished Frame" />
             <button onClick={() => download(combinedImage, "volt-profile-picture.png", "image/png")}>Download Profile Picture</button>
