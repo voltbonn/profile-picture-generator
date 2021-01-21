@@ -63,7 +63,7 @@ return (
         <h2>Choose your Photo:</h2>
 
         <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
-            {!!photo ? <img src={photo} /> : null}
+            {!!photo ? <img src={photo} alt="Preview" /> : null}
             <span>Load Photo</span>
             <input onChange={handleImage} type="file" accept="image/*" style={{display: 'none'}} />
         </label>
