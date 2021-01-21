@@ -58,7 +58,7 @@ function App() {
 
 return (
     <div className="App">
-        <img src={HeaderImage} className="HeaderImage" />
+        <img src={HeaderImage} className="HeaderImage" alt="Volt Logo" />
 
         <h2>Choose your Photo:</h2>
 
