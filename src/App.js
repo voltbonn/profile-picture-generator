@@ -1,16 +1,20 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import download from 'downloadjs'
-
-import frame_mixed from './frames/ProfileFrame Mixed Bars.png'
+import FrameChooser from './FrameChooser.js'
 
 import mergeImages from 'merge-images'
 
 const frameSize = 1080
 
 function App() {
+    const [frameURL, setFrameURL] = useState(null)
     const [photo, setPhoto] = useState(null)
     const [combinedImage, setCombinedImage] = useState(null)
+
+    const handleFrameURL = useCallback(newFrameURL => {
+        setFrameURL(newFrameURL)
+    }, [setFrameURL])
 
     const handleImage = useCallback(files_event => {
         const reader = new FileReader()
@@ -44,10 +48,10 @@ function App() {
     useEffect(() => {
         mergeImages([
             ...(photo ? [photo] : []),
-            ...(frame_mixed ? [frame_mixed] : []),
+            ...(frameURL ? [frameURL] : []),
         ])
         .then(b64 => setCombinedImage(b64))
-    }, [photo])
+    }, [photo, frameURL])
 
 
 
@@ -61,6 +65,7 @@ return (
 
             <button onClick={() => download(combinedImage, "volt-profile-picture.png", "image/png")}>Download Profile Picture</button>
         </header>
+        <FrameChooser onFrameChange={handleFrameURL} />
     </div>
 )
 }
