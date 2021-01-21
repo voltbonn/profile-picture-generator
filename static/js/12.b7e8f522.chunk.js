@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[12],{35:function(e,r,t){"use strict";t.r(r),r.default=t.p+"static/media/ProfileFrame Yellow Bars.a7793831.png"}}]);
-//# sourceMappingURL=12.b7e8f522.chunk.js.map
