@@ -82,7 +82,6 @@ function App() {
     }, [photo, frameURL])
 
 
-
     return (
         <div className="App" {...getRootProps()}>
             <img src={HeaderImage} className="HeaderImage" alt="Volt Logo" />
