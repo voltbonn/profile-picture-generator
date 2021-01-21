@@ -10,6 +10,7 @@ const frameSize = 1080
 
 function App() {
     const [frameURL, setFrameURL] = useState(null)
+    const [originalPhoto, setOriginalPhoto] = useState(null)
     const [photo, setPhoto] = useState(null)
     const [combinedImage, setCombinedImage] = useState(null)
 
@@ -42,6 +43,7 @@ function App() {
                 setPhoto(pngUrl)
             }
             img.src = reader_event.target.result
+            setOriginalPhoto(reader_event.target.result)
         }
         reader.readAsDataURL(files_event.target.files[0])
     }, [setPhoto])
@@ -64,8 +66,8 @@ return (
         <p>It should best be a square image or your face in the middle. The photo is not saved and never leaves your computer.</p>
 
         <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
-            {!!photo ? <img src={photo} alt="Preview" /> : null}
             <span>Load Photo</span>
+            {!!photo ? <img src={originalPhoto} alt="Preview" /> : null}
             <input onChange={handleImage} type="file" accept="image/*" style={{display: 'none'}} />
         </label>
 
