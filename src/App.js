@@ -61,6 +61,7 @@ return (
         <img src={HeaderImage} className="HeaderImage" alt="Volt Logo" />
 
         <h2>Choose your Photo:</h2>
+        <p>It should best be a square image or your face in the middle. The photo is not saved and never leaves your computer.</p>
 
         <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
             {!!photo ? <img src={photo} alt="Preview" /> : null}

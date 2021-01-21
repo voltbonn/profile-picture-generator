@@ -32,6 +32,11 @@ h2{
     font-size: calc(10px + 4vmin);
 }
 
+p{
+    max-width: 100%;
+    width: calc(40vh + 15vw);
+}
+
 .HeaderImage{
     height: calc(10px + 30vmin);
     max-width: 100%;
