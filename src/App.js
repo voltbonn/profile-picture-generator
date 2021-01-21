@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
+import download from 'downloadjs'
 
 import frame_mixed from './frames/ProfileFrame Mixed Bars.png'
 
@@ -58,6 +59,7 @@ return (
 
             <img src={combinedImage} className="App-logo" alt="Finished Frame" />
 
+            <button onClick={() => download(combinedImage, "volt-profile-picture.png", "image/png")}>Download Profile Picture</button>
         </header>
     </div>
 )
