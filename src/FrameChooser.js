@@ -26,7 +26,6 @@ function FrameChooser({onFrameChange}) {
                 })
             )
             .then(new_frames => {
-                    console.log(new_frames)
                 setFrames(new_frames)
                 setChoosenFrame(new_frames[0].src.default)
             })
