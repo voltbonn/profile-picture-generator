@@ -21,6 +21,10 @@ function App() {
 
 
     const handleReadFile = useCallback(file => {
+        if (!(!!file)) {
+            return;
+        }
+
         const reader = new FileReader()
         reader.onload = reader_event => {
             const img = new Image()
