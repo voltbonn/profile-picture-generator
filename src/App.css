@@ -5,6 +5,10 @@
     height: calc(10px + 30vmin);
     max-width: 100%;
 }
+
+.FinishedFrame {
+    height: 36vh;
+    margin: 2vh;
 }
 
 .App-logo {

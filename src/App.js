@@ -61,7 +61,6 @@ return (
             <input type="file" onChange={handleImage} />
         <img src={HeaderImage} className="HeaderImage" />
 
-            <img src={combinedImage} className="App-logo" alt="Finished Frame" />
         <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
             {!!photo ? <img src={photo} /> : null}
             <span>Load Photo</span>
@@ -69,6 +68,7 @@ return (
         </label>
 
         <FrameChooser onFrameChange={handleFrameURL} />
+        <img src={combinedImage} className="FinishedFrame" alt="Finished Frame" />
         <button onClick={() => download(combinedImage, "volt-profile-picture.png", "image/png")}>Download Profile Picture</button>
     </div>
 )
