@@ -55,4 +55,4 @@ function FrameChooser({onFrameChange}) {
     )
 }
 
-export default FrameChooser;
+export default FrameChooser

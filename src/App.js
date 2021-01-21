@@ -46,7 +46,7 @@ function App() {
                     (frameSize - height) / 2,
                     width,
                     height,
-                );
+                )
 
                 const pngUrl = offscreenCanvas.toDataURL()
                 setPhoto(pngUrl)
@@ -108,4 +108,4 @@ function App() {
     )
 }
 
-export default App;
+export default App
