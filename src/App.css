@@ -1,3 +1,8 @@
+:root{
+    --volt-purple: #582C83;
+    --background: #140022;
+}
+
 *{
     font-family: 'Ubuntu';
 }
