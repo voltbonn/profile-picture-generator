@@ -28,11 +28,11 @@ function App() {
         reader.onload = reader_event => {
             const img = new Image()
             img.onload = function () {
-                const offscreenCanvas = document.createElement('canvas')
-                offscreenCanvas.width = frameSize
-                offscreenCanvas.height = frameSize
+                const canvas = document.createElement('canvas')
+                canvas.width = frameSize
+                canvas.height = frameSize
 
-                const offscreenCanvas_ctx = offscreenCanvas.getContext('2d', { alpha: true })
+                const ctx = canvas.getContext('2d', { alpha: true })
 
                 let width, height;
                 if (img.width < img.height) {
@@ -43,7 +43,7 @@ function App() {
                     width = (img.width / img.height) * frameSize
                 }
                 
-                offscreenCanvas_ctx.drawImage(
+                ctx.drawImage(
                     img,
                     (frameSize - width) / 2,
                     (frameSize - height) / 2,
@@ -51,7 +51,7 @@ function App() {
                     height,
                 )
 
-                const pngUrl = offscreenCanvas.toDataURL()
+                const pngUrl = canvas.toDataURL()
                 setPhoto(pngUrl)
             }
             img.src = reader_event.target.result
