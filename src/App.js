@@ -8,6 +8,44 @@ import mergeImages from 'merge-images'
 
 const frameSize = 1080
 
+function getOrientation(file, callback) {
+    // Source: http://stackoverflow.com/a/32490603
+    var reader = new FileReader();
+
+    reader.onload = function (event) {
+        var view = new DataView(event.target.result);
+
+        if (view.getUint16(0, false) !== 0xFFD8) return callback(-2);
+
+        var length = view.byteLength,
+            offset = 2;
+
+        while (offset < length) {
+            var marker = view.getUint16(offset, false);
+            offset += 2;
+
+            if (marker === 0xFFE1) {
+                if (view.getUint32(offset += 2, false) !== 0x45786966) {
+                    return callback(-1);
+                }
+                var little = view.getUint16(offset += 6, false) === 0x4949;
+                offset += view.getUint32(offset + 4, little);
+                var tags = view.getUint16(offset, little);
+                offset += 2;
+
+                for (var i = 0; i < tags; i++)
+                    if (view.getUint16(offset + (i * 12), little) === 0x0112)
+                        return callback(view.getUint16(offset + (i * 12) + 8, little));
+            }
+            else if ((marker & 0xFF00) !== 0xFF00) break;
+            else offset += view.getUint16(offset, false);
+        }
+        return callback(-1);
+    };
+
+    reader.readAsArrayBuffer(file.slice(0, 64 * 1024));
+};
+
 function App() {
     const [frameURL, setFrameURL] = useState(null)
     const [originalPhoto, setOriginalPhoto] = useState(null)
@@ -42,17 +80,63 @@ function App() {
                     height = frameSize
                     width = (img.width / img.height) * frameSize
                 }
-                
-                ctx.drawImage(
-                    img,
-                    (frameSize - width) / 2,
-                    (frameSize - height) / 2,
-                    width,
-                    height,
-                )
 
-                const pngUrl = canvas.toDataURL()
-                setPhoto(pngUrl)
+                getOrientation(file, orientation => {
+                    // use the correct image orientation
+                    switch (orientation) {
+                        // Source: https://stackoverflow.com/a/30242954/2387277
+                        // Source: https://stackoverflow.com/questions/19463126/how-to-draw-photo-with-correct-orientation-in-canvas-after-capture-photo-by-usin
+                        case 2:
+                            // horizontal flip
+                            ctx.translate(canvas.width, 0)
+                            ctx.scale(-1, 1)
+                            break
+                        case 3:
+                            // 180° rotate left
+                            ctx.translate(canvas.width, canvas.height)
+                            ctx.rotate(Math.PI)
+                            break
+                        case 4:
+                            // vertical flip
+                            ctx.translate(0, canvas.height)
+                            ctx.scale(1, -1)
+                            break
+                        case 5:
+                            // vertical flip + 90 rotate right
+                            ctx.rotate(0.5 * Math.PI)
+                            ctx.scale(1, -1)
+                            break
+                        case 6:
+                            // 90° rotate right
+                            ctx.rotate(0.5 * Math.PI)
+                            ctx.translate(0, -canvas.height)
+                            break
+                        case 7:
+                            // horizontal flip + 90 rotate right
+                            ctx.rotate(0.5 * Math.PI)
+                            ctx.translate(canvas.width, -canvas.height)
+                            ctx.scale(-1, 1)
+                            break
+                        case 8:
+                            // 90° rotate left
+                            ctx.rotate(-0.5 * Math.PI)
+                            ctx.translate(-canvas.width, 0)
+                            break
+                        default:
+                            break
+                    }
+
+                    ctx.drawImage(
+                        img,
+                        (frameSize - width) / 2,
+                        (frameSize - height) / 2,
+                        width,
+                        height,
+                    )
+
+                    const pngUrl = canvas.toDataURL()
+                    setPhoto(pngUrl)
+                })
             }
             img.src = reader_event.target.result
             setOriginalPhoto(reader_event.target.result)
