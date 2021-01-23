@@ -161,7 +161,22 @@ function Editor({ onChange, background, backgroundRatio, foreground }) {
         if (!hammer_got_init && !!editorRef && !!editorRef.current) {
             const element = editorRef.current
 
-            element.addEventListener('mousedown', e => e.preventDefault(), false)
+            element.addEventListener('mousedown', event => {
+                event.preventDefault()
+                // event.stopPropagation()
+            }, false)
+            element.addEventListener("touchstart", event => {
+                event.preventDefault()
+                // event.stopPropagation()
+            }, false)
+            element.addEventListener("touchend", event => {
+                event.preventDefault()
+                // event.stopPropagation()
+            }, false)
+            element.addEventListener("touchmove", event => {
+                event.preventDefault()
+                // event.stopPropagation()
+            }, false)
 
             set_hammertime(new Hammer(element, {
                 direction: 'DIRECTION_ALL',
