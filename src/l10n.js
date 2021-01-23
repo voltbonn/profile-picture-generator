@@ -7,10 +7,13 @@ import { ReactLocalization, LocalizationProvider } from '@fluent/react'
 import { FluentBundle, FluentResource } from '@fluent/bundle'
 import { negotiateLanguages } from '@fluent/langneg'
 
-const _supportedLocales_ = [
-    'de',
-    'en',
-]
+
+export const locales = {
+    de: 'Deutsch',
+    en: 'English',
+}
+
+const _supportedLocales_ = Object.keys(locales)
 const _defaultLocale_ = 'en'
 
 
@@ -46,16 +49,20 @@ async function createMessagesGenerator(currentLocales) {
     }
 }
 
-export function AppLocalizationProvider({ userLocales, children }){
+export function AppLocalizationProvider({ userLocales, children, onLocaleChange }){
     const [bundles, setBundles] = useState(getDefaultBundles())
 
-    useEffect(event => {
+    useEffect(() => {
         async function loadBundles() {
             const currentLocales = negotiateLanguages(
                 userLocales,
                 _supportedLocales_,
                 { defaultLocale: _defaultLocale_ }
             )
+            
+            if (!!onLocaleChange) {
+                onLocaleChange(currentLocales)
+            }
 
             const generateBundles = await createMessagesGenerator(currentLocales)
             setBundles( new ReactLocalization(generateBundles()) )

@@ -10,11 +10,9 @@ import purpleBG from './purpleBG.png'
 import empty_1x1 from './empty_1x1.png'
 
 import 'intl-pluralrules'
-import { AppLocalizationProvider } from './l10n.js'
+import { AppLocalizationProvider, locales } from './l10n.js'
 import { withLocalization, Localized } from './Localized.js'
 
-const userLocales = ['de'] || navigator.languages
-// const userLocales = navigator.languages
 
 const frameSize = 1080
 
@@ -348,8 +346,41 @@ const AppLocalized = withLocalization(App)
 
 
 function AppWrapper() {
-    return <AppLocalizationProvider key="AppLocalizationProvider" userLocales={userLocales}>
-        <AppLocalized />
+    const [userLocales, setUserLocales] = useState(navigator.languages)
+    const [currentLocale, setCurrentLocale] = useState(null)
+
+    const handleLanguageChange = useCallback(event => {
+        setUserLocales([event.target.dataset.locale])
+    }, [setUserLocales])
+
+    const handleCurrentLocalesChange = useCallback(currentLocales => {
+        setCurrentLocale(currentLocales.length > 0 ? currentLocales[0] : '')
+    }, [setCurrentLocale])
+
+    return <AppLocalizationProvider
+        key="AppLocalizationProvider"
+        userLocales={userLocales}
+        onLocaleChange={handleCurrentLocalesChange}
+    >
+        <>
+            <AppLocalized />
+
+            <div className="locale_chooser">
+                {
+                    Object.entries(locales)
+                    .map(([locale, name]) => {
+                        return <button
+                            className={locale === currentLocale ? 'choosen' : ''}
+                            key={locale}
+                            data-locale={locale}
+                            onClick={handleLanguageChange}
+                        >
+                            {name}
+                        </button>
+                    })
+                }
+            </div>
+        </>
     </AppLocalizationProvider>
 }
 export default withLocalization(AppWrapper)

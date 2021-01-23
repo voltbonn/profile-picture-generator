@@ -22,6 +22,11 @@ footer{
     margin: 10vmin 0 0 0;
 }
 
+.locale_chooser{
+    margin: -8vmin 10vmin 10vmin 10vmin;
+    text-align: center;
+}
+
 .App {
     text-align: center;
 
