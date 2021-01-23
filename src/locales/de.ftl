@@ -10,7 +10,7 @@ title_choose_frame = Wähl einen Rahmen:
 title_choose_hashtag = Wähl einen Hashtag:
 button_no_hashtag = Kein Hashtag
 
-title_reposition_photo = Foto bearbeiten:
+title_reposition_photo = Foto repositionieren:
 button_download = Profilbild herunterladen
 
 link_imprint = Impressum
