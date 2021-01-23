@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react'
 import './App.css'
 import { useDropzone } from 'react-dropzone'
 import FrameChooser from './FrameChooser.js'
+import HashtagChooser from './HashtagChooser.js'
 import Editor from './Editor.js'
 import HeaderImage from './HeaderImage.svg'
 import purpleBG from './purpleBG.png'
@@ -67,6 +68,7 @@ function trigger_download(name, data){
 
 function App() {
     const [frameURL, setFrameURL] = useState(null)
+    const [hashtagURL, setHashtagURL] = useState(null)
     const [originalPhoto, setOriginalPhoto] = useState(null)
     const [originalPhotoRation, setOriginalPhotoRation] = useState(1)
     const [orientation, set_orientation] = useState(null)
@@ -82,6 +84,10 @@ function App() {
     const handleFrameURL = useCallback(newFrameURL => {
         setFrameURL(newFrameURL)
     }, [setFrameURL])
+
+    const handleHashtagURL = useCallback(newHashtagURL => {
+        setHashtagURL(newHashtagURL)
+    }, [setHashtagURL])
 
     const handleCordsChange = useCallback(({x, y, scale}) => {
         setCords({ x, y, scale })
@@ -242,6 +248,7 @@ function App() {
                 purpleBG,
                 ...(pngUrl ? [pngUrl] : []),
                 ...(frameURL ? [frameURL] : []),
+                ...(hashtagURL ? [hashtagURL] : []),
             ])
             .then(b64 => {
                 // set_combinedImage(b64)
@@ -257,6 +264,7 @@ function App() {
         cords.scale,
         orientation,
         frameURL,
+        hashtagURL,
         height,
         width,
     ])
@@ -288,6 +296,7 @@ function App() {
 
             {!!originalPhoto ? (<>
                 <FrameChooser onChange={handleFrameURL} />
+                <HashtagChooser onChange={handleHashtagURL} />
             </>) : null}
 
             {!!originalPhoto && !!frameURL ? (<>
