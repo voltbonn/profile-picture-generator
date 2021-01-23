@@ -301,7 +301,7 @@ function App({ getString }) {
                 <input onChange={handleImage} type="file" accept="image/*" style={{display: 'none'}} />
             </label>
 
-            {!!originalPhoto ? (<>
+            {true || !!originalPhoto ? (<>
                 <h2><Localized id="title_choose_frame" /></h2>
                 <FrameChooser onChange={handleFrameURL} />
                 <h2><Localized id="title_choose_hashtag" /></h2>
