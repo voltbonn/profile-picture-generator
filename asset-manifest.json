@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.fc67e96e.chunk.css",
-    "main.js": "/static/js/main.c5ef7ee6.chunk.js",
-    "main.js.map": "/static/js/main.c5ef7ee6.chunk.js.map",
+    "main.css": "/static/css/main.1f31d51d.chunk.css",
+    "main.js": "/static/js/main.8871a541.chunk.js",
+    "main.js.map": "/static/js/main.8871a541.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b5f24269.js",
     "runtime-main.js.map": "/static/js/runtime-main.b5f24269.js.map",
     "static/js/2.ac5abb0a.chunk.js": "/static/js/2.ac5abb0a.chunk.js",
@@ -80,7 +80,7 @@
     "static/js/38.19273822.chunk.js": "/static/js/38.19273822.chunk.js",
     "static/js/38.19273822.chunk.js.map": "/static/js/38.19273822.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.fc67e96e.chunk.css.map": "/static/css/main.fc67e96e.chunk.css.map",
+    "static/css/main.1f31d51d.chunk.css.map": "/static/css/main.1f31d51d.chunk.css.map",
     "static/js/2.ac5abb0a.chunk.js.LICENSE.txt": "/static/js/2.ac5abb0a.chunk.js.LICENSE.txt",
     "static/media/EuropeCares.png": "/static/media/EuropeCares.0e31be7f.png",
     "static/media/ProfileFrame Blue Bars.png": "/static/media/ProfileFrame Blue Bars.698613ff.png",
@@ -102,7 +102,7 @@
   "entrypoints": [
     "static/js/runtime-main.b5f24269.js",
     "static/js/2.ac5abb0a.chunk.js",
-    "static/css/main.fc67e96e.chunk.css",
-    "static/js/main.c5ef7ee6.chunk.js"
+    "static/css/main.1f31d51d.chunk.css",
+    "static/js/main.8871a541.chunk.js"
   ]
 }
