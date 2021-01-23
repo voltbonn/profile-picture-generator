@@ -114,7 +114,7 @@ button,
     position: relative;
     outline: none;
     border: none;
-    margin: 2vh;
+    margin: 1vh;
     padding: 1vh 2vh;
     font-size: calc(10px + 2vmin);
     font-weight: bold;
