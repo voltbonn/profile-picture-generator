@@ -290,8 +290,11 @@ function App() {
             </>) : null}
 
             {!!originalPhoto && !!frameURL ? (<>
+                <h2>Reposition your Photo:</h2>
+                {/*
                 <h2>Edit your Photo:</h2>
                 <p>Your can reposition the image and scale it. Use pinch-to-zoom or scroll to scale.</p>
+                */}
 
                 <Editor
                     background={originalPhoto}
