@@ -291,9 +291,7 @@ function App({ getString }) {
             </div>
 
             <h2><Localized id="title_choose_photo" /></h2>
-            <p>
-                <Localized id="text_choose_photo_info" />
-            </p>
+            <p><Localized id="text_choose_photo_info" /></p>
 
             <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
                 {!!originalPhoto ? <img src={originalPhoto} alt="Preview" /> : null}
