@@ -15,7 +15,6 @@ function FrameChooser({onChange}) {
                     'ProfileFrame Blue Bars',
                     'ProfileFrame Green Bars',
                     'ProfileFrame White Bars',
-                    'white-round-bottom-logo',
                 ]
                 .map(async frame_filename => {
                     return {
