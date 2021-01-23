@@ -83,10 +83,7 @@ function Editor({ onChange, background, backgroundRatio, foreground }) {
             setPhotoWidth(new_photoWidth)
             setPhotoHeight(new_photoHeight)
         }
-    }, [
-        backgroundRatio,
-        foreground,
-    ])
+    }, [backgroundRatio])
 
     useEffect(() => {
         const {
