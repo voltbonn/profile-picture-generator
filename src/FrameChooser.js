@@ -9,12 +9,12 @@ function FrameChooser({onChange}) {
             Promise.all(
                 [
                     'ProfileFrame Purple',
+                    'ProfileFrame Mixed Bars',
                     'ProfileFrame Yellow Bars',
                     'ProfileFrame Red Bars',
                     'ProfileFrame Blue Bars',
                     'ProfileFrame Green Bars',
                     'ProfileFrame White Bars',
-                    'ProfileFrame Mixed Bars',
                 ]
                 .map(async frame_filename => {
                     return {
