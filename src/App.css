@@ -1,6 +1,7 @@
 :root{
     --volt-purple: #582C83;
     --background: #140022;
+    --editor-purple: #522B79;
 }
 
 *{
@@ -129,6 +130,7 @@ button:hover,
     font-size: 0;
     cursor: move;
     overflow: hidden;
+    background: var(--editor-purple);
 }
 .Editor .background{
     pointer-events: none; 
