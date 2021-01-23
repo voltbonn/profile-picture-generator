@@ -4,6 +4,7 @@ import { useDropzone } from 'react-dropzone'
 import FrameChooser from './FrameChooser.js'
 import Editor from './Editor.js'
 import HeaderImage from './HeaderImage.svg'
+import purpleBG from './purpleBG.png'
 
 import mergeImages from 'merge-images'
 
@@ -239,6 +240,7 @@ function App() {
             const pngUrl = canvas.toDataURL()
 
             mergeImages([
+                purpleBG,
                 ...(pngUrl ? [pngUrl] : []),
                 ...(frameURL ? [frameURL] : []),
             ])
