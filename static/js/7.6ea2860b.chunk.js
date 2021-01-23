@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[7],{72:function(e,t,i){"use strict";i.r(t),t.default=i.p+"static/media/it.7ebcf80c.ftl"}}]);
-//# sourceMappingURL=7.6ea2860b.chunk.js.map
