@@ -297,9 +297,10 @@ function App() {
                 */}
 
                 <Editor
-                    background={originalPhoto}
+                    backgroundURL={originalPhoto || empty_1x1}
                     backgroundRatio={originalPhotoRation}
-                    foreground={frameURL}
+                    frameURL={frameURL}
+                    hashtagURL={hashtagURL || empty_1x1}
                     onChange={handleCordsChange}
                 />
 

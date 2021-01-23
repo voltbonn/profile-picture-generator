@@ -33,7 +33,7 @@ let maxScale = 8;
 
 
 
-function Editor({ onChange, background, backgroundRatio, foreground }) {
+function Editor({ onChange, backgroundURL, backgroundRatio, frameURL, hashtagURL }) {
     const editorRef = useRef(null)
     const backgroundImageRef = useRef(null)
 
@@ -111,7 +111,7 @@ function Editor({ onChange, background, backgroundRatio, foreground }) {
         set_add_x(0)
         set_add_y(0)
         set_scale(1)
-    }, [background])
+    }, [backgroundURL])
 
     const handleMove = useCallback(event => {
         const prev_x = event.target.dataset.x * 1
@@ -206,7 +206,7 @@ function Editor({ onChange, background, backgroundRatio, foreground }) {
             data-scale={scale}
         >
             <img
-                src={background}
+                src={backgroundURL}
                 ref={backgroundImageRef}
                 alt=""
                 className="background"
@@ -217,9 +217,14 @@ function Editor({ onChange, background, backgroundRatio, foreground }) {
                 }}
             />
             <img
-                src={foreground}
+                src={frameURL}
                 alt=""
                 className="foreground"
+            />
+            <img
+                src={hashtagURL}
+                alt=""
+                className="hashtag"
             />
         </div>
     )
