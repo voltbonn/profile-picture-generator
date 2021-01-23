@@ -68,18 +68,34 @@ a:hover{
 }
 
 .FrameChooser .frame{
-    height: 12vh;
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+
     margin: 2vh;
     cursor: pointer;
-    box-shadow: 0 0 0 1vh rgba(255,255,255,0);
+    /* box-shadow: 0 0 0 1vh rgba(255,255,255,0); */
     transition: transform 0.2s ease;
+}
+.FrameChooser .frame img{
+    height: 12vh;
+    pointer-events: none;
 }
 .FrameChooser .frame:hover{
     transform-origin: center center;
     transform: scale(1.1);
 }
-.FrameChooser .frame.choosen{
+/* .FrameChooser .frame.choosen{
     box-shadow: 0 0 0 1vh white;
+} */
+.FrameChooser .frame.choosen:after {
+    content: "";
+    position: absolute;
+    top: -0.5vh;
+    right: -0.5vh;
+    bottom: -0.5vh;
+    left: -0.5vh;
+    box-shadow: 0 0 0 0.5vh white;
 }
 
 .HashtagChooser .hashtag_button {

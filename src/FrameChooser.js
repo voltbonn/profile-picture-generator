@@ -45,7 +45,14 @@ function FrameChooser({onChange}) {
                 frames.map(frame => {
                     const frame_src_path = frame.src.default
                     const isChoosen = choosenFrame === frame_src_path
-                    return <img alt={frame.name} key={frame_src_path} data-src={frame_src_path} src={frame_src_path} className={isChoosen ? 'frame choosen' : 'frame'} onClick={handleImageChoosing}/>
+                    return <div
+                        key={frame_src_path}
+                        data-src={frame_src_path}
+                        className={isChoosen ? 'frame choosen' : 'frame'}
+                        onClick={handleImageChoosing}
+                    >
+                        <img alt={frame.name} src={frame_src_path} />
+                    </div>
                 })
             }             
         </div>
