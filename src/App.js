@@ -9,6 +9,12 @@ import HeaderImage from './HeaderImage.svg'
 import purpleBG from './purpleBG.png'
 import empty_1x1 from './empty_1x1.png'
 
+import 'intl-pluralrules'
+import { AppLocalizationProvider } from './l10n.js'
+import { Localized } from './Localized.js'
+
+// const userLocales = ['de'] || navigator.languages
+const userLocales = navigator.languages
 
 const frameSize = 1080
 
@@ -279,6 +285,7 @@ function App() {
 
 
     return (
+        <AppLocalizationProvider key="AppLocalizationProvider" userLocales={userLocales}>
         <div className="App" {...getRootProps()}>
             <img src={HeaderImage} className="HeaderImage" alt="Volt Logo" />
 
@@ -286,7 +293,7 @@ function App() {
                 Drop your photo here ...
             </div>
 
-            <h2>Choose your Photo:</h2>
+                <h2><Localized id="choose_your_photo" /></h2>
             <p>It should best be a square image or your face in the middle. The photo is not saved and never leaves your computer.</p>
 
             <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
@@ -326,6 +333,7 @@ function App() {
                 <a href="https://github.com/voltbonn/profile-picture-generator">Source Code</a>
             </footer>
         </div>
+        </AppLocalizationProvider>
     )
 }
 
