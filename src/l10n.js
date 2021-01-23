@@ -68,7 +68,7 @@ export function AppLocalizationProvider({ userLocales, children, onLocaleChange 
             setBundles( new ReactLocalization(generateBundles()) )
         }
         loadBundles()
-    }, [userLocales])
+    }, [userLocales, onLocaleChange])
 
     if (!bundles) {
         // Show a loader.
