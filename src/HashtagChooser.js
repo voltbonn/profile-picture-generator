@@ -12,6 +12,7 @@ function HashtagChooser({ onChange, getString }) {
                     '',
                     'VoteVolt',
                     'JoinTheChange',
+                    'RejoinEU',
                     'DeineWahl',
                     'JetztBistDuDran',
                     'VoltEuropa',
@@ -22,6 +23,14 @@ function HashtagChooser({ onChange, getString }) {
                     'pragmatisch',
                     'progressiv',
                     'Europa',
+
+                    'democracy',
+                    'EUReform',
+                    'European',
+                    'EuropeCares',
+                    'FutureMadeInEurope',
+                    'ValuesOverPower',
+                    'ZukunftMadeInEurope',
                 ]
                     .map(async frame_filename => {
                         return {
