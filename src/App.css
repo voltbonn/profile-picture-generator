@@ -18,6 +18,10 @@ body{
     background-color: var(--background);
 }
 
+footer{
+    margin: 10vmin 0 0 0;
+}
+
 .App {
     text-align: center;
 
