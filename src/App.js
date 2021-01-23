@@ -308,7 +308,7 @@ function App({ getString }) {
                 <HashtagChooser onChange={handleHashtagURL} />
             </>) : null}
 
-            {!!originalPhoto && !!frameURL ? (<>
+            {!!originalPhoto && !!frameURL && !!handleHashtagURL ? (<>
                 <h2><Localized id="title_reposition_photo" /></h2>
                 {/*
                 <h2>Edit your Photo:</h2>
