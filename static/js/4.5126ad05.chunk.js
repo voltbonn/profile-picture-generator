@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[4],{28:function(e,r,t){"use strict";t.r(r),r.default=t.p+"static/media/ProfileFrame B&G Bars.2a430953.png"}}]);
-//# sourceMappingURL=4.5126ad05.chunk.js.map
