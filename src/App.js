@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import './App.css'
 import { useDropzone } from 'react-dropzone'
 import FrameChooser from './FrameChooser.js'
+import Editor from './Editor.js'
 import HeaderImage from './HeaderImage.svg'
 
 import mergeImages from 'merge-images'
@@ -53,16 +54,37 @@ function getOrientation(file, callback) {
     reader.readAsArrayBuffer(file.slice(0, 64 * 1024))
 }
 
+function trigger_download(name, data){
+    const a = document.createElement('a')
+    document.body.appendChild(a)
+    a.target = '_blank'
+    a.download = name
+    a.href = data // "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABWSURBVDhPY0xISPh//0UOA7mAiVyNMH2jBjAwkBQGjD9KGBTEJ6OEO0kG2NvbMwCjnXwDsEU5SS5ANuDhjRCGJbPFSQsDdBfIyMhQZgDIQLK9QLWkDABPsQw5I+5qmAAAAABJRU5ErkJggg==";
+    a.click()
+}
+
 function App() {
     const [frameURL, setFrameURL] = useState(null)
     const [originalPhoto, setOriginalPhoto] = useState(null)
-    const [photo, setPhoto] = useState(null)
-    const [combinedImage, setCombinedImage] = useState(null)
+    const [originalPhotoRation, setOriginalPhotoRation] = useState(1)
+    const [orientation, set_orientation] = useState(null)
+
+
+    // const [combinedImage, set_combinedImage] = useState(null)
+
+    const [width, set_width] = useState(0)
+    const [height, set_height] = useState(0)
+
+    const [cords, setCords] = useState({x:0, y:0, scale:1})
 
     const handleFrameURL = useCallback(newFrameURL => {
         setFrameURL(newFrameURL)
     }, [setFrameURL])
 
+    const handleCordsChange = useCallback(({x, y, scale}) => {
+        console.log({ x, y, scale })
+        setCords({ x, y, scale })
+    }, [])
 
     const handleReadFile = useCallback(file => {
         if (!(!!file)) {
@@ -73,12 +95,6 @@ function App() {
         reader.onload = reader_event => {
             const img = new Image()
             img.onload = function () {
-                const canvas = document.createElement('canvas')
-                canvas.width = frameSize
-                canvas.height = frameSize
-
-                const ctx = canvas.getContext('2d', { alpha: true })
-
                 let width, height;
                 if (img.width < img.height) {
                     height = (img.height / img.width) * frameSize
@@ -88,65 +104,53 @@ function App() {
                     width = (img.width / img.height) * frameSize
                 }
 
-                getOrientation(file, orientation => {
+                getOrientation(file, new_orientation => {
+                    let original_ration = 1
                     // use the correct image orientation
-                    switch (orientation) {
+                    switch (new_orientation) {
                         // Source: https://stackoverflow.com/a/30242954/2387277
                         // Source: https://stackoverflow.com/questions/19463126/how-to-draw-photo-with-correct-orientation-in-canvas-after-capture-photo-by-usin
                         case 2:
                             // horizontal flip
-                            ctx.translate(canvas.width, 0)
-                            ctx.scale(-1, 1)
+                            original_ration = height / width
                             break
                         case 3:
                             // 180° rotate left
-                            ctx.translate(canvas.width, canvas.height)
-                            ctx.rotate(Math.PI)
+                            original_ration = height / width
                             break
                         case 4:
                             // vertical flip
-                            ctx.translate(0, canvas.height)
-                            ctx.scale(1, -1)
+                            original_ration = height / width
                             break
                         case 5:
                             // vertical flip + 90 rotate right
-                            ctx.rotate(0.5 * Math.PI)
-                            ctx.scale(1, -1)
+                            original_ration = width / height
                             break
                         case 6:
                             // 90° rotate right
-                            ctx.rotate(0.5 * Math.PI)
-                            ctx.translate(0, -canvas.height)
+                            original_ration = width / height
                             break
                         case 7:
                             // horizontal flip + 90 rotate right
-                            ctx.rotate(0.5 * Math.PI)
-                            ctx.translate(canvas.width, -canvas.height)
-                            ctx.scale(-1, 1)
+                            original_ration = width / height
                             break
                         case 8:
                             // 90° rotate left
-                            ctx.rotate(-0.5 * Math.PI)
-                            ctx.translate(-canvas.width, 0)
+                            original_ration = width / height
                             break
                         default:
+                            original_ration = height / width
                             break
                     }
 
-                    ctx.drawImage(
-                        img,
-                        (frameSize - width) / 2,
-                        (frameSize - height) / 2,
-                        width,
-                        height,
-                    )
-
-                    const pngUrl = canvas.toDataURL()
-                    setPhoto(pngUrl)
+                    set_width(width)
+                    set_height(height)
+                    setOriginalPhoto(reader_event.target.result)
+                    set_orientation(new_orientation)
+                    setOriginalPhotoRation(original_ration)
                 })
             }
             img.src = reader_event.target.result
-            setOriginalPhoto(reader_event.target.result)
         }
         reader.readAsDataURL(file)
     }, [])
@@ -159,21 +163,108 @@ function App() {
         handleReadFile(acceptedFiles[0])
     }, [handleReadFile])
 
+    const handleDownload = useCallback(() => {
+        const img = new Image()
+        img.onload = function () {
+            const canvas = document.createElement('canvas')
+            canvas.width = frameSize
+            canvas.height = frameSize
+
+            const ctx = canvas.getContext('2d', { alpha: true })
+
+            // use the correct image orientation
+            switch (orientation) {
+                // Source: https://stackoverflow.com/a/30242954/2387277
+                // Source: https://stackoverflow.com/questions/19463126/how-to-draw-photo-with-correct-orientation-in-canvas-after-capture-photo-by-usin
+                case 2:
+                    // horizontal flip
+                    ctx.translate(canvas.width, 0)
+                    ctx.scale(-1, 1)
+                    break
+                case 3:
+                    // 180° rotate left
+                    ctx.translate(canvas.width, canvas.height)
+                    ctx.rotate(Math.PI)
+                    break
+                case 4:
+                    // vertical flip
+                    ctx.translate(0, canvas.height)
+                    ctx.scale(1, -1)
+                    break
+                case 5:
+                    // vertical flip + 90 rotate right
+                    ctx.rotate(0.5 * Math.PI)
+                    ctx.scale(1, -1)
+                    break
+                case 6:
+                    // 90° rotate right
+                    ctx.rotate(0.5 * Math.PI)
+                    ctx.translate(0, -canvas.height)
+                    break
+                case 7:
+                    // horizontal flip + 90 rotate right
+                    ctx.rotate(0.5 * Math.PI)
+                    ctx.translate(canvas.width, -canvas.height)
+                    ctx.scale(-1, 1)
+                    break
+                case 8:
+                    // 90° rotate left
+                    ctx.rotate(-0.5 * Math.PI)
+                    ctx.translate(-canvas.width, 0)
+                    break
+                default:
+                    break
+            }
+
+
+            const width_scaled = width * cords.scale
+            const height_scaled = height * cords.scale
+
+            ctx.drawImage(
+                img,
+                cords.x * 3.5 + (frameSize - width_scaled) * 0.5,
+                cords.y * 3.5 + (frameSize - height_scaled) * 0.5,
+                width_scaled,
+                height_scaled,
+            )
+            // ctx.drawImage(
+            //     img,
+            //     ((frameSize - width_scaled) * 0.5),
+            //     ((frameSize - height_scaled) * 0.5),
+            //     width_scaled,
+            //     height_scaled,
+            // )
+
+            const pngUrl = canvas.toDataURL()
+
+            mergeImages([
+                ...(pngUrl ? [pngUrl] : []),
+                ...(frameURL ? [frameURL] : []),
+            ])
+            .then(b64 => {
+                // set_combinedImage(b64)
+                trigger_download('volt-profile-picture.png', b64)
+            })
+
+        }
+        img.src = originalPhoto
+    }, [
+        originalPhoto,
+        cords.x,
+        cords.y,
+        cords.scale,
+        orientation,
+        frameURL,
+        height,
+        width,
+    ])
+
     const { isDragActive, getRootProps } = useDropzone({
         onDrop,
         accept: 'image/*',
         maxFiles: 1,
         noKeyboard: true,
     })
-
-
-    useEffect(() => {
-        mergeImages([
-            ...(photo ? [photo] : []),
-            ...(frameURL ? [frameURL] : []),
-        ])
-        .then(b64 => setCombinedImage(b64))
-    }, [photo, frameURL])
 
 
     return (
@@ -188,18 +279,28 @@ function App() {
             <p>It should best be a square image or your face in the middle. The photo is not saved and never leaves your computer.</p>
 
             <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
-                {!!photo ? <img src={originalPhoto} alt="Preview" /> : null}
-                <span>{!!photo ? 'Change Photo' : 'Load Photo'}</span>
+                {!!originalPhoto ? <img src={originalPhoto} alt="Preview" /> : null}
+                <span>{!!originalPhoto ? 'Change Photo' : 'Load Photo'}</span>
                 <input onChange={handleImage} type="file" accept="image/*" style={{display: 'none'}} />
             </label>
 
-            <FrameChooser onFrameChange={handleFrameURL} />
+            {!!originalPhoto ? (<>
+                <FrameChooser onFrameChange={handleFrameURL} />
+            </>) : null}
 
-            <h2>Download your Photo:</h2>
-            <img src={combinedImage} className="FinishedFrame" alt="Finished Frame" />
-            <a download="volt-profile-picture.png" href={combinedImage} target="_blank" rel="noreferrer">
-                <button>Download Profile Picture</button>
-            </a>
+            {!!originalPhoto && !!frameURL ? (<>
+                <h2>Edit your Photo:</h2>
+                <p>Your can reposition the image and scale it. Use pinch-to-zoom or scroll to scale.</p>
+
+                <Editor
+                    background={originalPhoto}
+                    backgroundRatio={originalPhotoRation}
+                    foreground={frameURL}
+                    onChange={handleCordsChange}
+                />
+
+                <button onClick={handleDownload}>Download Profile Picture</button>
+            </>) : null}
         </div>
     )
 }

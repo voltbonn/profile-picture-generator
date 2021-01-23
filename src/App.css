@@ -13,11 +13,14 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+body{
+    background-color: var(--background);
+}
+
 .App {
     text-align: center;
 
-    background-color: var(--background);
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,3 +120,26 @@ button:hover,
 .droparea.active{
     opacity: 1;
 }
+
+
+.Editor{
+    pointer-events: all;
+    position: relative;
+    margin: 2vh;
+    font-size: 0;
+    cursor: move;
+    overflow: hidden;
+}
+.Editor .background{
+    pointer-events: none; 
+    position: absolute;   
+    top: 50%;
+    left: 50%;
+}
+.Editor .foreground{
+    pointer-events: none;
+    position: relative;
+    width: 36vh;
+    height: 36vh;
+}
+
