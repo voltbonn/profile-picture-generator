@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.645a60aa.chunk.css",
-    "main.js": "/static/js/main.88f0f141.chunk.js",
-    "main.js.map": "/static/js/main.88f0f141.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8cfb6fb7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8cfb6fb7.js.map",
+    "main.js": "/static/js/main.148333d5.chunk.js",
+    "main.js.map": "/static/js/main.148333d5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.86800db0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.86800db0.js.map",
     "static/js/2.834074b5.chunk.js": "/static/js/2.834074b5.chunk.js",
     "static/js/2.834074b5.chunk.js.map": "/static/js/2.834074b5.chunk.js.map",
-    "static/js/3.c5248933.chunk.js": "/static/js/3.c5248933.chunk.js",
-    "static/js/3.c5248933.chunk.js.map": "/static/js/3.c5248933.chunk.js.map",
-    "static/js/4.63aa0b5b.chunk.js": "/static/js/4.63aa0b5b.chunk.js",
-    "static/js/4.63aa0b5b.chunk.js.map": "/static/js/4.63aa0b5b.chunk.js.map",
+    "static/js/3.598f4f07.chunk.js": "/static/js/3.598f4f07.chunk.js",
+    "static/js/3.598f4f07.chunk.js.map": "/static/js/3.598f4f07.chunk.js.map",
+    "static/js/4.00ef0d70.chunk.js": "/static/js/4.00ef0d70.chunk.js",
+    "static/js/4.00ef0d70.chunk.js.map": "/static/js/4.00ef0d70.chunk.js.map",
     "static/js/5.0e590114.chunk.js": "/static/js/5.0e590114.chunk.js",
     "static/js/5.0e590114.chunk.js.map": "/static/js/5.0e590114.chunk.js.map",
     "static/js/6.d7248466.chunk.js": "/static/js/6.d7248466.chunk.js",
@@ -61,13 +61,13 @@
     "static/media/ProfileFrame Red Bars.png": "/static/media/ProfileFrame Red Bars.b9af36d9.png",
     "static/media/ProfileFrame White Bars.png": "/static/media/ProfileFrame White Bars.56078c77.png",
     "static/media/ProfileFrame Yellow Bars.png": "/static/media/ProfileFrame Yellow Bars.d7f8f717.png",
-    "static/media/de.ftl": "/static/media/de.6da0d34d.ftl",
-    "static/media/en.ftl": "/static/media/en.51e1fee2.ftl"
+    "static/media/de.ftl": "/static/media/de.e89cdf3a.ftl",
+    "static/media/en.ftl": "/static/media/en.0356dc96.ftl"
   },
   "entrypoints": [
-    "static/js/runtime-main.8cfb6fb7.js",
+    "static/js/runtime-main.86800db0.js",
     "static/js/2.834074b5.chunk.js",
     "static/css/main.645a60aa.chunk.css",
-    "static/js/main.88f0f141.chunk.js"
+    "static/js/main.148333d5.chunk.js"
   ]
 }
