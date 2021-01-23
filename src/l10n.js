@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 // https://projectfluent.org/play/
 
@@ -46,38 +46,30 @@ async function createMessagesGenerator(currentLocales) {
     }
 }
 
-export class AppLocalizationProvider extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            bundles: getDefaultBundles(),
+export function AppLocalizationProvider({ userLocales, children }){
+    const [bundles, setBundles] = useState(getDefaultBundles())
+
+    useEffect(event => {
+        async function loadBundles() {
+            const currentLocales = negotiateLanguages(
+                userLocales,
+                _supportedLocales_,
+                { defaultLocale: _defaultLocale_ }
+            )
+
+            const generateBundles = await createMessagesGenerator(currentLocales)
+            setBundles( new ReactLocalization(generateBundles()) )
         }
+        loadBundles()
+    }, [])
+
+    if (!bundles) {
+        // Show a loader.
+        return <div>Loading texts…</div>
     }
 
-    async componentDidMount() {
-        const currentLocales = negotiateLanguages(
-            this.props.userLocales,
-            _supportedLocales_,
-            { defaultLocale: _defaultLocale_ }
-        )
-
-        const generateBundles = await createMessagesGenerator(currentLocales)
-        this.setState({ bundles: new ReactLocalization(generateBundles()) })
-    }
-
-    render() {
-        const { children } = this.props
-        const { bundles } = this.state
-
-        if (!bundles) {
-            // Show a loader.
-            return <div>Loading texts…</div>
-        }
-
-        return (
-            <LocalizationProvider l10n={bundles}>
-                {children}
-            </LocalizationProvider>
-        )
-    }
+    return <LocalizationProvider l10n={bundles}>
+        {children}
+    </LocalizationProvider>
 }
+
