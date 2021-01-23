@@ -42,7 +42,6 @@ function FrameChooser({onChange}) {
 
     return (
         <div className="FrameChooser">
-            <h2>Choose a frame:</h2>
             {
                 frames.map(frame => {
                     const frame_src_path = frame.src.default

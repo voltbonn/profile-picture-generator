@@ -11,10 +11,10 @@ import empty_1x1 from './empty_1x1.png'
 
 import 'intl-pluralrules'
 import { AppLocalizationProvider } from './l10n.js'
-import { Localized } from './Localized.js'
+import { withLocalization, Localized } from './Localized.js'
 
-// const userLocales = ['de'] || navigator.languages
-const userLocales = navigator.languages
+const userLocales = ['de'] || navigator.languages
+// const userLocales = navigator.languages
 
 const frameSize = 1080
 
@@ -73,7 +73,7 @@ function trigger_download(name, data){
     a.remove()
 }
 
-function App() {
+function App({ getString }) {    
     const [frameURL, setFrameURL] = useState(null)
     const [hashtagURL, setHashtagURL] = useState(null)
     const [originalPhoto, setOriginalPhoto] = useState(null)
@@ -285,30 +285,33 @@ function App() {
 
 
     return (
-        <AppLocalizationProvider key="AppLocalizationProvider" userLocales={userLocales}>
         <div className="App" {...getRootProps()}>
             <img src={HeaderImage} className="HeaderImage" alt="Volt Logo" />
 
             <div className={isDragActive ? 'droparea active' : 'droparea'}>
-                Drop your photo here ...
+                <Localized id="title_drop_photo_here" />
             </div>
 
-                <h2><Localized id="choose_your_photo" /></h2>
-            <p>It should best be a square image or your face in the middle. The photo is not saved and never leaves your computer.</p>
+            <h2><Localized id="title_choose_photo" /></h2>
+            <p>
+                <Localized id="text_choose_photo_info" />
+            </p>
 
             <label className="labelButton" tabIndex="0" style={{outline:'none'}}>
                 {!!originalPhoto ? <img src={originalPhoto} alt="Preview" /> : null}
-                <span>{!!originalPhoto ? 'Change Photo' : 'Load Photo'}</span>
+                <span>{!!originalPhoto ? getString('button_change_photo') : getString('button_load_photo') }</span>
                 <input onChange={handleImage} type="file" accept="image/*" style={{display: 'none'}} />
             </label>
 
             {!!originalPhoto ? (<>
+                <h2><Localized id="title_choose_frame" /></h2>
                 <FrameChooser onChange={handleFrameURL} />
+                <h2><Localized id="title_choose_hashtag" /></h2>
                 <HashtagChooser onChange={handleHashtagURL} />
             </>) : null}
 
             {!!originalPhoto && !!frameURL ? (<>
-                <h2>Reposition your Photo:</h2>
+                <h2><Localized id="title_reposition_photo" /></h2>
                 {/*
                 <h2>Edit your Photo:</h2>
                 <p>Your can reposition the image and scale it. Use pinch-to-zoom or scroll to scale.</p>
@@ -322,19 +325,32 @@ function App() {
                     onChange={handleCordsChange}
                 />
 
-                <button onClick={handleDownload}>Download Profile Picture</button>
+                <button onClick={handleDownload}><Localized id="button_download" /></button>
             </>) : null}
 
             <footer>
-                <a href="https://www.voltdeutschland.org/impressum">Imprint</a>
+                <a href="https://www.voltdeutschland.org/impressum">
+                    <Localized id="link_imprint" />
+                </a>
                 &nbsp; • &nbsp;
-                <a href="https://www.voltdeutschland.org/datenschutz">Privacy Policy</a>
+                <a href="https://www.voltdeutschland.org/datenschutz">
+                    <Localized id="link_privacy_policy" />
+                </a>
                 &nbsp; • &nbsp;
-                <a href="https://github.com/voltbonn/profile-picture-generator">Source Code</a>
+                <a href="https://github.com/voltbonn/profile-picture-generator">
+                    <Localized id="link_source_code" />
+                </a>
             </footer>
         </div>
-        </AppLocalizationProvider>
     )
 }
+const AppLocalized = withLocalization(App)
 
-export default App
+
+function AppWrapper() {
+    return <AppLocalizationProvider key="AppLocalizationProvider" userLocales={userLocales}>
+        <AppLocalized />
+    </AppLocalizationProvider>
+}
+export default withLocalization(AppWrapper)
+

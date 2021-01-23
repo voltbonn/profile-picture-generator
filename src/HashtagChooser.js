@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
+import { withLocalization } from './Localized.js'
 
-function HashtagChooser({ onChange }) {
+function HashtagChooser({ onChange, getString }) {
     const [frames, setFrames] = useState([])
     const [choosenFrame, setChoosenFrame] = useState(null)
 
@@ -46,13 +47,12 @@ function HashtagChooser({ onChange }) {
 
     return (
         <div className="HashtagChooser">
-            <h2>Choose a Hashtag:</h2>
             {
                 frames.map(frame => {
                     const frame_src_path = frame.src.default
                     const isChoosen = choosenFrame === frame_src_path
                     return <button key={frame_src_path} data-src={frame_src_path} className={isChoosen ? 'hashtag_button choosen' : 'hashtag_button'} onClick={handleImageChoosing}>
-                        {frame.name === '' ? 'No Hashtag' : '#'+frame.name}
+                        {frame.name === '' ? getString('button_no_hashtag') : '#'+frame.name}
                     </button>
                 })
             }
@@ -60,4 +60,4 @@ function HashtagChooser({ onChange }) {
     )
 }
 
-export default HashtagChooser
+export default withLocalization(HashtagChooser)
