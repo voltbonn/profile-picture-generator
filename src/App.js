@@ -6,6 +6,7 @@ import HashtagChooser from './HashtagChooser.js'
 import Editor from './Editor.js'
 import HeaderImage from './HeaderImage.svg'
 import purpleBG from './purpleBG.png'
+import empty_1x1 from './empty_1x1.png'
 
 import mergeImages from 'merge-images'
 
