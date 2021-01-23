@@ -5,7 +5,7 @@ import mergeImages from 'merge-images'
 import FrameChooser from './FrameChooser.js'
 import HashtagChooser from './HashtagChooser.js'
 import Editor from './Editor.js'
-import HeaderImage from './HeaderImage.svg'
+import VoltLogoPurple from './VoltLogoPurple.svg'
 import purpleBG from './purpleBG.png'
 import empty_1x1 from './empty_1x1.png'
 
@@ -284,7 +284,8 @@ function App({ getString }) {
 
     return (
         <div className="App" {...getRootProps()}>
-            <img src={HeaderImage} className="HeaderImage" alt="Volt Logo" />
+            <img src={VoltLogoPurple} className="HeaderImage" alt={getString('alt_volt_logo')} />
+            <h1><Localized id="title_profile_generator" /></h1>
 
             <div className={isDragActive ? 'droparea active' : 'droparea'}>
                 <Localized id="title_drop_photo_here" />

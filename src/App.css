@@ -40,6 +40,12 @@ footer{
     padding: 10vmin;
 }
 
+h1{
+    font-size: calc(10px + 10vmin);
+    line-height: 0.9;
+    margin-top: 2vmin;
+}
+
 h2{
     margin: 10vh 0 2vh 0;
     font-size: calc(10px + 4vmin);
@@ -58,7 +64,7 @@ a:hover{
 }
 
 .HeaderImage{
-    height: calc(10px + 30vmin);
+    height: calc(10px + 20vmin);
     max-width: 100%;
 }
 

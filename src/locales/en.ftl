@@ -1,4 +1,7 @@
 
+alt_volt_logo = Volt Logo
+title_profile_generator = Profile Frames
+
 title_drop_photo_here = Drop your photo here ...
 title_choose_photo = Choose your Photo:
 text_choose_photo_info = The photo is not saved and never leaves your computer.

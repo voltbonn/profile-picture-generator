@@ -1,4 +1,7 @@
 
+alt_volt_logo = Volt Logo
+title_profile_generator = Profil Rahmen
+
 title_drop_photo_here = Leg hier dein Foto ab ...
 title_choose_photo = Wähl Dein Foto:
 text_choose_photo_info = Das Foto wird nicht gespeichert und verlässt nie Deinen Computer.
