@@ -57,10 +57,11 @@ function getOrientation(file, callback) {
 function trigger_download(name, data){
     const a = document.createElement('a')
     document.body.appendChild(a)
-    a.target = '_blank'
+    // a.target = '_blank'
     a.download = name
     a.href = data
     a.click()
+    a.remove()
 }
 
 function App() {
