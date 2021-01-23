@@ -78,22 +78,13 @@ a:hover{
 }
 
 .HashtagChooser .hashtag_button {
-    position: relative;
     /* display: block; */
     margin: 1vmin;
-}
-.HashtagChooser .hashtag_button.choosen:after {
-    content: "";
-    position: absolute;
-    top: -0.5vh;
-    right: -0.5vh;
-    bottom: -0.5vh;
-    left: -0.5vh;
-    box-shadow: 0 0 0 0.5vh white;
 }
 
 button,
 .labelButton{
+    position: relative;
     outline: none;
     border: none;
     margin: 2vh;
@@ -110,6 +101,15 @@ button:hover,
 .labelButton:hover{
     transform-origin: center center;
     transform: scale(1.05);
+}
+button.choosen:after {
+    content: "";
+    position: absolute;
+    top: -0.5vh;
+    right: -0.5vh;
+    bottom: -0.5vh;
+    left: -0.5vh;
+    box-shadow: 0 0 0 0.5vh white;
 }
 
 .labelButton img{
