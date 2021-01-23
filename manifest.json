@@ -3,17 +3,17 @@
   "name": "Volt Social Media Frame Generator",
   "icons": [
     {
-      "src": "volt-logo-64.png",
+      "src": "volt-logo-white-64.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/png"
     },
     {
-      "src": "volt-logo-192.png",
+      "src": "volt-logo-white-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "volt-logo-512.png",
+      "src": "volt-logo-white-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
