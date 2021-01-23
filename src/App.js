@@ -369,7 +369,7 @@ function AppWrapper() {
                     Object.entries(locales)
                     .map(([locale, name]) => {
                         return <button
-                            className={locale === currentLocale ? 'choosen' : ''}
+                            className={locale === currentLocale ? 'isInRow choosen' : 'isInRow'}
                             key={locale}
                             data-locale={locale}
                             onClick={handleLanguageChange}

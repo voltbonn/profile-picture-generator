@@ -104,17 +104,12 @@ a:hover{
     box-shadow: 0 0 0 0.5vh white;
 }
 
-.HashtagChooser .hashtag_button {
-    /* display: block; */
-    margin: 1vmin;
-}
-
 button,
 .labelButton{
     position: relative;
     outline: none;
     border: none;
-    margin: 1vh;
+    margin: 2vmin;
     padding: 1vh 2vh;
     font-size: calc(10px + 2vmin);
     font-weight: bold;
@@ -123,6 +118,9 @@ button,
     background: white;
     color: var(--volt-purple);
     transition: transform 0.2s ease;
+}
+button.isInRow{
+    margin: 1vmin;
 }
 button:hover,
 .labelButton:hover{
