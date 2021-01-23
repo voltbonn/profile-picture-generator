@@ -10,17 +10,17 @@ function HashtagChooser({ onChange, getString }) {
             Promise.all(
                 [
                     '',
+                    'VoteVolt',
                     'DeineWahl',
-                    'Europa',
                     'JetztBistDuDran',
+                    'VoltEuropa',
+                    'VoltRLP',
+                    'Volt21',
+                    'Volt',
                     'paneuropäisch',
                     'pragmatisch',
                     'progressiv',
-                    'Volt',
-                    'Volt21',
-                    'VoltEuropa',
-                    'VoltRLP',
-                    'VoteVolt',
+                    'Europa',
                 ]
                     .map(async frame_filename => {
                         return {
