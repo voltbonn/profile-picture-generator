@@ -11,7 +11,7 @@ function HashtagChooser({ onChange, getString }) {
                 [
                     '',
                     'VoteVolt',
-                    'JoinTheChange'
+                    'JoinTheChange',
                     'DeineWahl',
                     'JetztBistDuDran',
                     'VoltEuropa',
