@@ -41,6 +41,13 @@ p{
     width: calc(40vh + 15vw);
 }
 
+a{
+    color: white;
+}
+a:hover{
+    color: rgba(255,255,255,0.8);
+}
+
 .HeaderImage{
     height: calc(10px + 30vmin);
     max-width: 100%;

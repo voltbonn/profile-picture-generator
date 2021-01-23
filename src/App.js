@@ -317,6 +317,14 @@ function App() {
 
                 <button onClick={handleDownload}>Download Profile Picture</button>
             </>) : null}
+
+            <footer>
+                <a href="https://www.voltdeutschland.org/impressum">Imprint</a>
+                &nbsp; • &nbsp;
+                <a href="https://www.voltdeutschland.org/datenschutz">Privacy Policy</a>
+                &nbsp; • &nbsp;
+                <a href="https://github.com/voltbonn/profile-picture-generator">Source Code</a>
+            </footer>
         </div>
     )
 }
