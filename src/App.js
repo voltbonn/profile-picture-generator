@@ -84,7 +84,6 @@ function App() {
     }, [setFrameURL])
 
     const handleCordsChange = useCallback(({x, y, scale}) => {
-        console.log({ x, y, scale })
         setCords({ x, y, scale })
     }, [])
 
