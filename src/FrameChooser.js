@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 
-function FrameChooser({onFrameChange}) {
+function FrameChooser({onChange}) {
     const [frames, setFrames] = useState([])
     const [choosenFrame, setChoosenFrame] = useState(null)
 
@@ -38,8 +38,8 @@ function FrameChooser({onFrameChange}) {
     }, [setChoosenFrame])
 
     useEffect(() => {
-        onFrameChange(choosenFrame)
-    }, [onFrameChange, choosenFrame])
+        onChange(choosenFrame)
+    }, [onChange, choosenFrame])
 
     return (
         <div className="FrameChooser">

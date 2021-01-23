@@ -286,7 +286,7 @@ function App() {
             </label>
 
             {!!originalPhoto ? (<>
-                <FrameChooser onFrameChange={handleFrameURL} />
+                <FrameChooser onChange={handleFrameURL} />
             </>) : null}
 
             {!!originalPhoto && !!frameURL ? (<>
