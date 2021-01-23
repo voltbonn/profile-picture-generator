@@ -11,6 +11,12 @@ import { negotiateLanguages } from '@fluent/langneg'
 export const locales = {
     de: 'Deutsch',
     en: 'English',
+    es: 'Español',
+    fr: 'Français',
+    it: 'Italiano',
+    nl: 'Dutch',
+    pl: 'Polska',
+    ru: 'Pусский',
 }
 
 const _supportedLocales_ = Object.keys(locales)
