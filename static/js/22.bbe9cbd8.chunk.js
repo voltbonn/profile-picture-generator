@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[22],{59:function(e,p,r){"use strict";r.r(p),p.default=r.p+"static/media/EuropeCares.0e31be7f.png"}}]);
-//# sourceMappingURL=22.bbe9cbd8.chunk.js.map
