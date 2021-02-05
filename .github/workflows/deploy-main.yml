@@ -40,4 +40,4 @@ jobs:
         with:
           email: thomas.rosen@me.com
           build_dir: build
-          cname: profile_generator.volt-bonn.de
+          cname: profile.volt-bonn.de
