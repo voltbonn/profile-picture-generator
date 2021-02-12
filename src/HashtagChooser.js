@@ -10,27 +10,27 @@ function HashtagChooser({ onChange, getString }) {
             Promise.all(
                 [
                     '',
-                    'VoteVolt',
-                    'JoinTheChange',
-                    'RejoinEU',
-                    'DeineWahl',
-                    'JetztBistDuDran',
-                    'VoltEuropa',
-                    'VoltRLP',
-                    'Volt21',
-                    'Volt',
-                    'paneuropäisch',
-                    'pragmatisch',
-                    'progressiv',
-                    'Europa',
+                    '#VoteVolt',
+                    '#JoinTheChange',
+                    '#RejoinEU',
+                    '#DeineWahl',
+                    '#JetztBistDuDran',
+                    '#VoltEuropa',
+                    '#VoltRLP',
+                    '#Volt21',
+                    '#Volt',
+                    '#paneuropäisch',
+                    '#pragmatisch',
+                    '#progressiv',
+                    '#Europa',
 
-                    'democracy',
-                    'EUReform',
-                    'European',
-                    'EuropeCares',
-                    'FutureMadeInEurope',
-                    'ValuesOverPower',
-                    'ZukunftMadeInEurope',
+                    '#democracy',
+                    '#EUReform',
+                    '#European',
+                    '#EuropeCares',
+                    '#FutureMadeInEurope',
+                    '#ValuesOverPower',
+                    '#ZukunftMadeInEurope',
                 ]
                     .map(async frame_filename => {
                         return {
@@ -62,7 +62,7 @@ function HashtagChooser({ onChange, getString }) {
                     const frame_src_path = frame.src.default
                     const isChoosen = choosenFrame === frame_src_path
                     return <button key={frame.name} data-src={frame_src_path} className={isChoosen ? 'isInRow choosen' : 'isInRow'} onClick={handleImageChoosing}>
-                        {frame.name === '' ? getString('button_no_hashtag') : '#'+frame.name}
+                        {frame.name === '' ? getString('button_no_hashtag') : frame.name}
                     </button>
                 })
             }
