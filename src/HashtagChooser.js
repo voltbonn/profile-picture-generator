@@ -31,6 +31,9 @@ function HashtagChooser({ onChange, getString }) {
                     '#FutureMadeInEurope',
                     '#ValuesOverPower',
                     '#ZukunftMadeInEurope',
+
+                    '#IkStemVolt',
+                    'stemvolt.nl',
                 ]
                     .map(async frame_filename => {
                         return {
