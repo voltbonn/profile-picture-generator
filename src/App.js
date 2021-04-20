@@ -90,7 +90,7 @@ function UmamiLink({ href, name, target, children, ...props }) {
         // Prevent normal href-follow
         event.preventDefault()
         return false
-    }, [href, name])
+    }, [href, name, target])
 
     return <a
         {...props}
