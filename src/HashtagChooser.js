@@ -36,6 +36,8 @@ function HashtagChooser({ onChange, getString }) {
 
                     '#IkStemVolt',
                     'stemvolt.nl',
+
+                    '#VoltForLGBTIAQ',
                 ]
                     .map(async frame_filename => {
                         return {
