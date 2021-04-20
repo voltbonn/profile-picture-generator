@@ -66,7 +66,7 @@ export function AppLocalizationProvider({ userLocales, children, onLocaleChange 
                 _supportedLocales_,
                 { defaultLocale: _defaultLocale_ }
             )
-            
+
             if (!!onLocaleChange) {
                 onLocaleChange(currentLocales)
             }
