@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import { useDropzone } from 'react-dropzone'
 import mergeImages from 'merge-images'
@@ -362,6 +362,15 @@ const AppLocalized = withLocalization(App)
 function AppWrapper() {
     const [userLocales, setUserLocales] = useState(navigator.languages)
     const [currentLocale, setCurrentLocale] = useState(null)
+
+    useEffect(() => {
+        let systemLocales = navigator.languages
+        if (!!systemLocales || Array.isArray(systemLocales)) {
+            for (const locale of systemLocales) {
+                window.umami.trackEvent('L: ' + locale) // Log Locale / Languages
+            }
+        }
+    }, [])
 
     const handleLanguageChange = useCallback(event => {
         setUserLocales([event.target.dataset.locale])
