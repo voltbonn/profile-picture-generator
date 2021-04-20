@@ -322,7 +322,6 @@ function App({ getString }) {
         noKeyboard: true,
     })
 
-
     return (
         <div className="App" {...getRootProps()}>
             <img src={VoltLogoPurple} className="HeaderImage" alt={getString('alt_volt_logo')} />
