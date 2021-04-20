@@ -56,7 +56,7 @@ function FrameChooser({onChange}) {
                         <img alt={frame.name} src={frame_src_path} />
                     </div>
                 })
-            }             
+            }
         </div>
     )
 }

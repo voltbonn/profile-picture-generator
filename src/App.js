@@ -71,7 +71,7 @@ function trigger_download(name, data){
     a.remove()
 }
 
-function App({ getString }) {    
+function App({ getString }) {
     const [frameURL, setFrameURL] = useState(null)
     const [hashtagURL, setHashtagURL] = useState(null)
     const [originalPhoto, setOriginalPhoto] = useState(null)
