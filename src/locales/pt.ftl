@@ -19,3 +19,4 @@ button_download = Baixar foto do perfil
 link_imprint = Notícia legal
 link_privacy_policy = Política de Privacidade
 link_source_code = Código fonte
+link_app_contact = Contacto

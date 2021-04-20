@@ -337,6 +337,10 @@ function App({ getString }) {
                 <a href="https://github.com/voltbonn/profile-picture-generator">
                     <Localized id="link_source_code" />
                 </a>
+                &nbsp; • &nbsp;
+                <a href="mailto:thomas.rosen@volteuropa.org">
+                    <Localized id="link_app_contact" />
+                </a>
             </footer>
         </div>
     )

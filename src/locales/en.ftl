@@ -19,3 +19,4 @@ button_download = Download Profile Picture
 link_imprint = Imprint
 link_privacy_policy = Privacy Policy
 link_source_code = Source Code
+link_app_contact = Contact
