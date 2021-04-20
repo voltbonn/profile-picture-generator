@@ -14,9 +14,9 @@ function FrameChooser({onChange}) {
                     'ProfileFrame Red Bars',
                     'ProfileFrame Blue Bars',
                     'ProfileFrame Green Bars',
-                    'ProfileFrame White Bars',
-                    'ProfileFrame B_G Bars',
-                    'ProfileFrame R_Y Bars',
+                    // 'ProfileFrame White Bars',
+                    // 'ProfileFrame B_G Bars',
+                    // 'ProfileFrame R_Y Bars',
                 ]
                 .map(async frame_filename => {
                     return {
