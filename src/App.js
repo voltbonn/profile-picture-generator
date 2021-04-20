@@ -72,12 +72,14 @@ function trigger_download(name, data){
 }
 
 function App({ getString }) {
-    const [frameURL, setFrameURL] = useState(null)
-    const [hashtagURL, setHashtagURL] = useState(null)
+    const [frame, setFrame] = useState(null)
+    const [hashtag, setHashtag] = useState(null)
     const [originalPhoto, setOriginalPhoto] = useState(null)
     const [originalPhotoRation, setOriginalPhotoRation] = useState(1)
     const [orientation, set_orientation] = useState(null)
 
+    const frameURL = !!frame ? frame.src : null
+    const hashtagURL = !!hashtag ? hashtag.src : null
 
     // const [combinedImage, set_combinedImage] = useState(null)
 
@@ -86,13 +88,13 @@ function App({ getString }) {
 
     const [cords, setCords] = useState({x:0, y:0, scale:1})
 
-    const handleFrameURL = useCallback(newFrameURL => {
-        setFrameURL(newFrameURL)
-    }, [setFrameURL])
+    const handleFrame = useCallback(newFrame => {
+        setFrame(newFrame)
+    }, [setFrame])
 
-    const handleHashtagURL = useCallback(newHashtagURL => {
-        setHashtagURL(newHashtagURL)
-    }, [setHashtagURL])
+    const handleHashtag = useCallback(newHashtag => {
+        setHashtag(newHashtag)
+    }, [setHashtag])
 
     const handleCordsChange = useCallback(({x, y, scale}) => {
         setCords({ x, y, scale })
@@ -302,9 +304,9 @@ function App({ getString }) {
 
             {true || !!originalPhoto ? (<>
                 <h2><Localized id="title_choose_frame" /></h2>
-                <FrameChooser onChange={handleFrameURL} />
+                <FrameChooser onChange={handleFrame} />
                 <h2><Localized id="title_choose_hashtag" /></h2>
-                <HashtagChooser onChange={handleHashtagURL} />
+                <HashtagChooser onChange={handleHashtag} />
             </>) : null}
 
             {!!originalPhoto && !!frameURL && !!handleHashtagURL ? (<>

@@ -5,6 +5,8 @@ function HashtagChooser({ onChange, getString }) {
     const [frames, setFrames] = useState([])
     const [choosenFrame, setChoosenFrame] = useState(null)
 
+    const choosenFrameSRC = !!choosenFrame ? choosenFrame.src : null
+
     useEffect(() => {
         async function loadFrames() {
             Promise.all(
@@ -38,20 +40,20 @@ function HashtagChooser({ onChange, getString }) {
                     .map(async frame_filename => {
                         return {
                             name: frame_filename,
-                            src: frame_filename === '' ? '' : await import(`./hashtags/${frame_filename}.png`),
+                            src: frame_filename === '' ? '' : (await import(`./hashtags/${frame_filename}.png`)).default,
                         }
                     })
             )
                 .then(new_frames => {
                     setFrames(new_frames)
-                    setChoosenFrame(new_frames[0].src.default)
+                    setChoosenFrame(new_frames[0])
                 })
         }
         loadFrames()
     }, [])
 
-    const handleImageChoosing = useCallback(event => {
-        setChoosenFrame(event.target.dataset.src)
+    const handleImageChoosing = useCallback(frame => {
+        setChoosenFrame(frame)
     }, [setChoosenFrame])
 
     useEffect(() => {
@@ -62,9 +64,9 @@ function HashtagChooser({ onChange, getString }) {
         <div className="HashtagChooser">
             {
                 frames.map(frame => {
-                    const frame_src_path = frame.src.default
-                    const isChoosen = choosenFrame === frame_src_path
-                    return <button key={frame.name} data-src={frame_src_path} className={isChoosen ? 'isInRow choosen' : 'isInRow'} onClick={handleImageChoosing}>
+                    const frame_src_path = frame.src
+                    const isChoosen = choosenFrameSRC === frame_src_path
+                    return <button key={frame.name} data-src={frame_src_path} className={isChoosen ? 'isInRow choosen' : 'isInRow'} onClick={() => handleImageChoosing(frame)}>
                         {frame.name === '' ? getString('button_no_hashtag') : frame.name}
                     </button>
                 })

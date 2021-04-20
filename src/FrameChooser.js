@@ -4,6 +4,8 @@ function FrameChooser({onChange}) {
     const [frames, setFrames] = useState([])
     const [choosenFrame, setChoosenFrame] = useState(null)
 
+    const choosenFrameSRC = !!choosenFrame ? choosenFrame.src : null
+
     useEffect(() => {
         async function loadFrames(){
             Promise.all(
@@ -21,20 +23,20 @@ function FrameChooser({onChange}) {
                 .map(async frame_filename => {
                     return {
                         name: frame_filename,
-                        src: await import(`./frames/${frame_filename}.png`),
+                        src: (await import(`./frames/${frame_filename}.png`)).default,
                     }
                 })
             )
             .then(new_frames => {
                 setFrames(new_frames)
-                setChoosenFrame(new_frames[0].src.default)
+                setChoosenFrame(new_frames[0])
             })
         }
         loadFrames()
     }, [])
 
-    const handleImageChoosing = useCallback(event => {
-        setChoosenFrame(event.target.dataset.src)
+    const handleImageChoosing = useCallback(frame => {
+        setChoosenFrame(frame)
     }, [setChoosenFrame])
 
     useEffect(() => {
@@ -45,13 +47,13 @@ function FrameChooser({onChange}) {
         <div className="FrameChooser">
             {
                 frames.map(frame => {
-                    const frame_src_path = frame.src.default
-                    const isChoosen = choosenFrame === frame_src_path
+                    const frame_src_path = frame.src
+                    const isChoosen = choosenFrameSRC === frame_src_path
                     return <div
                         key={frame_src_path}
                         data-src={frame_src_path}
                         className={isChoosen ? 'frame choosen' : 'frame'}
-                        onClick={handleImageChoosing}
+                        onClick={() => handleImageChoosing(frame)}
                     >
                         <img alt={frame.name} src={frame_src_path} />
                     </div>
