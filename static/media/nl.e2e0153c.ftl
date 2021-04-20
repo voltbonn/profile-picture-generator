@@ -19,3 +19,4 @@ button_download = Download Profielfoto
 link_imprint = Print
 link_privacy_policy = Privacybeleid
 link_source_code = Broncode
+link_app_contact = Contact
