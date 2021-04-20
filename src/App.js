@@ -260,6 +260,13 @@ function App({ getString }) {
             .then(b64 => {
                 // set_combinedImage(b64)
                 trigger_download('volt-profile-picture.png', b64)
+
+                const frameName = frame.name || 'No-Frame'
+                const hashtagName = hashtag.name || 'No-Hashtag'
+
+                window.umami.trackEvent('F: ' + frameName) // Log Frame
+                window.umami.trackEvent('H: ' + hashtagName) // Log Hashtag
+                window.umami.trackEvent('C: ' + [frameName, hashtagName].join(' | '))  // Log Combined
             })
 
         }
@@ -274,6 +281,8 @@ function App({ getString }) {
         hashtagURL,
         height,
         width,
+        frame,
+        hashtag
     ])
 
     const { isDragActive, getRootProps } = useDropzone({
