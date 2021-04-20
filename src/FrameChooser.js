@@ -10,15 +10,15 @@ function FrameChooser({onChange}) {
         async function loadFrames(){
             Promise.all(
                 [
-                    'ProfileFrame Purple',
-                    'ProfileFrame Mixed Bars',
-                    'ProfileFrame Yellow Bars',
-                    'ProfileFrame Red Bars',
-                    'ProfileFrame Blue Bars',
-                    'ProfileFrame Green Bars',
-                    // 'ProfileFrame White Bars',
-                    // 'ProfileFrame B_G Bars',
-                    // 'ProfileFrame R_Y Bars',
+                    '0xSOM', // SOM = Stripes of Movement
+                    '4xSOM-Blue-Red-Yellow-Green',
+                    '5xSOM-Blue',
+                    '5xSOM-Green',
+                    '5xSOM-Red',
+                    '5xSOM-Yellow',
+                    // '5xSOM-White',
+                    // '2xSOM-Blue-Green',
+                    // '2xSOM-Red-Yellow',
                 ]
                 .map(async frame_filename => {
                     return {
