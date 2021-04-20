@@ -71,6 +71,36 @@ function trigger_download(name, data){
     a.remove()
 }
 
+function UmamiLink({ href, name, target, children, ...props }) {
+    const handleClick = useCallback(event => {
+
+        if (name) {
+            window.umami.trackEvent('A: ' + name) // Log Anker / Link
+        }
+
+        // follow link
+        if (!(!!target)) {
+            setTimeout(() => {
+                window.location = href
+            }, 200)
+        }else{
+            window.open(href, target)
+        }
+
+        // Prevent normal href-follow
+        event.preventDefault()
+        return false
+    }, [href, name])
+
+    return <a
+        {...props}
+        href={href}
+        onClick={handleClick}
+    >
+        {children}
+    </a>
+}
+
 function App({ getString }) {
     const [frame, setFrame] = useState(null)
     const [hashtag, setHashtag] = useState(null)
@@ -337,21 +367,21 @@ function App({ getString }) {
             </>) : null}
 
             <footer>
-                <a href="https://www.voltdeutschland.org/impressum">
+                <UmamiLink name="imprint" href="https://www.voltdeutschland.org/impressum">
                     <Localized id="link_imprint" />
-                </a>
+                </UmamiLink>
                 &nbsp; • &nbsp;
-                <a href="https://www.voltdeutschland.org/datenschutz">
+                <UmamiLink name="privacy_policy" href="https://www.voltdeutschland.org/datenschutz">
                     <Localized id="link_privacy_policy" />
-                </a>
+                </UmamiLink>
                 &nbsp; • &nbsp;
-                <a href="https://github.com/voltbonn/profile-picture-generator">
+                <UmamiLink name="source_code" href="https://github.com/voltbonn/profile-picture-generator">
                     <Localized id="link_source_code" />
-                </a>
+                </UmamiLink>
                 &nbsp; • &nbsp;
-                <a href="mailto:thomas.rosen@volteuropa.org">
+                <UmamiLink name="contact" href="mailto:thomas.rosen@volteuropa.org">
                     <Localized id="link_app_contact" />
-                </a>
+                </UmamiLink>
             </footer>
         </div>
     )
