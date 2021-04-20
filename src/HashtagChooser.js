@@ -68,7 +68,12 @@ function HashtagChooser({ onChange, getString }) {
                 frames.map(frame => {
                     const frame_src_path = frame.src
                     const isChoosen = choosenFrameSRC === frame_src_path
-                    return <button key={frame.name} data-src={frame_src_path} className={isChoosen ? 'isInRow choosen' : 'isInRow'} onClick={() => handleImageChoosing(frame)}>
+                    return <button
+                        key={frame.name}
+                        data-src={frame_src_path}
+                        className={isChoosen ? 'isInRow choosen' : 'isInRow'}
+                        onClick={() => handleImageChoosing(frame)}
+                    >
                         {frame.name === '' ? getString('button_no_hashtag') : frame.name}
                     </button>
                 })
