@@ -26,21 +26,16 @@ hashtags =
   #JoinTheChange
   #VoltEuropa
   #Volt
-  #RejoinEU
+  #EuropeCares
+  #FutureMadeInEurope
 
   #Volt21
-  #IkStemVolt
+  #RejoinEU
 
   #progressiv
   #democracy
   #Europa
   #EUReform
   #European
-  #EuropeCares
   #VoltForLGBTIAQ
   #ValuesOverPower
-  #FutureMadeInEurope
-
-not_in_use_hashtags =
-  #VoltRLP
-  stemvolt.nl

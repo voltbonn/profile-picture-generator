@@ -20,3 +20,21 @@ link_imprint = Print
 link_privacy_policy = Privacybeleid
 link_source_code = Broncode
 link_app_contact = Contact
+
+
+hashtags =
+  #VoteVolt
+  #JoinTheChange
+  #VoltEuropa
+  #Volt
+  #EuropeCares
+  #FutureMadeInEurope
+
+  #Volt21
+  #IkStemVolt
+  stemvolt.nl
+
+  #Europa
+  #EUReform
+  #VoltForLGBTIAQ
+  #ValuesOverPower

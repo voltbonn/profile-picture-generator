@@ -26,18 +26,17 @@ hashtags =
   #JoinTheChange
   #VoltEuropa
   #Volt
+  #EuropeCares
+  #FutureMadeInEurope
+
+  #Volt21
   #DeineWahl
   #JetztBistDuDran
-  #Volt21
 
   #paneuropäisch
   #pragmatisch
   #progressiv
   #Europa
-  #democracy
   #EUReform
-  #European
-  #EuropeCares
   #VoltForLGBTIAQ
   #ValuesOverPower
-  #ZukunftMadeInEurope
