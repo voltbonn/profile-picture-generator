@@ -20,3 +20,26 @@ link_imprint = Impressum
 link_privacy_policy = Datenschutz
 link_source_code = Quellcode
 link_app_contact = Kontakt
+
+hashtags =
+  #VoteVolt
+  #JoinTheChange
+  #VoltEuropa
+  #Volt
+  -
+  #DeineWahl
+  #JetztBistDuDran
+  #Volt21
+  -
+  #paneuropäisch
+  #pragmatisch
+  #progressiv
+  #Europa
+  #democracy
+  #EUReform
+  #European
+  #EuropeCares
+  #VoltForLGBTIAQ
+  #ValuesOverPower
+  -
+  #ZukunftMadeInEurope

@@ -7,42 +7,39 @@ function HashtagChooser({ onChange, getString }) {
 
     const choosenFrameSRC = !!choosenFrame ? choosenFrame.src : null
 
+    let hashtags = getString('hashtags')
+
     useEffect(() => {
         async function loadFrames() {
+
+            console.log('hashtags', hashtags)
+            let counter = 0
+            hashtags = hashtags.split('\n')
+                .map(tag => tag.trim())
+                .map(tag => {
+                    if (tag === '-') {
+                        counter += 1
+                        return '---' + counter
+                    }
+                    return tag
+                })
+                .filter(tag => tag.length > 0)
+            console.log('hashtags', hashtags)
+
             Promise.all(
                 [
                     '',
-                    '#VoteVolt',
-                    '#JoinTheChange',
-                    '#RejoinEU',
-                    '#DeineWahl',
-                    '#JetztBistDuDran',
-                    '#VoltEuropa',
-                    '#VoltRLP',
-                    '#Volt21',
-                    '#Volt',
-                    '#paneuropäisch',
-                    '#pragmatisch',
-                    '#progressiv',
-                    '#Europa',
-
-                    '#democracy',
-                    '#EUReform',
-                    '#European',
-                    '#EuropeCares',
-                    '#FutureMadeInEurope',
-                    '#ValuesOverPower',
-                    '#ZukunftMadeInEurope',
-
-                    '#IkStemVolt',
-                    'stemvolt.nl',
-
-                    '#VoltForLGBTIAQ',
+                    '---',
+                    ...hashtags
                 ]
                     .map(async frame_filename => {
+                        let src = frame_filename
+                        if (frame_filename !== '' && !frame_filename.startsWith('---')) {
+                            src = (await import(`./hashtags/${frame_filename}.png`)).default
+                        }
                         return {
                             name: frame_filename,
-                            src: frame_filename === '' ? '' : (await import(`./hashtags/${frame_filename}.png`)).default,
+                            src
                         }
                     })
             )
@@ -52,7 +49,7 @@ function HashtagChooser({ onChange, getString }) {
                 })
         }
         loadFrames()
-    }, [])
+    }, [hashtags])
 
     const handleImageChoosing = useCallback(frame => {
         setChoosenFrame(frame)
@@ -68,6 +65,9 @@ function HashtagChooser({ onChange, getString }) {
                 frames.map(frame => {
                     const frame_src_path = frame.src
                     const isChoosen = choosenFrameSRC === frame_src_path
+                    if (frame_src_path.startsWith('---')) {
+                        return <div key={frame_src_path} style={{height: '1vmin'}} />
+                    }
                     return <button
                         key={frame.name}
                         data-src={frame_src_path}
