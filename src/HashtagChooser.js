@@ -12,7 +12,6 @@ function HashtagChooser({ onChange, getString }) {
     useEffect(() => {
         async function loadFrames() {
 
-            let counter = 0
             hashtags = hashtags.split('\n')
                 .map(tag => tag.trim())
                 .filter(tag => tag.length > 0)
