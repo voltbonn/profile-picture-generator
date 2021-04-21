@@ -26,11 +26,10 @@ hashtags =
   #JoinTheChange
   #VoltEuropa
   #Volt
-  -
   #DeineWahl
   #JetztBistDuDran
   #Volt21
-  -
+
   #paneuropäisch
   #pragmatisch
   #progressiv
@@ -41,5 +40,4 @@ hashtags =
   #EuropeCares
   #VoltForLGBTIAQ
   #ValuesOverPower
-  -
   #ZukunftMadeInEurope

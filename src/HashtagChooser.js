@@ -16,25 +16,17 @@ function HashtagChooser({ onChange, getString }) {
             let counter = 0
             hashtags = hashtags.split('\n')
                 .map(tag => tag.trim())
-                .map(tag => {
-                    if (tag === '-') {
-                        counter += 1
-                        return '---' + counter
-                    }
-                    return tag
-                })
                 .filter(tag => tag.length > 0)
             console.log('hashtags', hashtags)
 
             Promise.all(
                 [
                     '',
-                    '---',
                     ...hashtags
                 ]
                     .map(async frame_filename => {
                         let src = frame_filename
-                        if (frame_filename !== '' && !frame_filename.startsWith('---')) {
+                        if (frame_filename !== '') {
                             src = (await import(`./hashtags/${frame_filename}.png`)).default
                         }
                         return {
@@ -65,9 +57,6 @@ function HashtagChooser({ onChange, getString }) {
                 frames.map(frame => {
                     const frame_src_path = frame.src
                     const isChoosen = choosenFrameSRC === frame_src_path
-                    if (frame_src_path.startsWith('---')) {
-                        return <div key={frame_src_path} style={{height: '1vmin'}} />
-                    }
                     return <button
                         key={frame.name}
                         data-src={frame_src_path}

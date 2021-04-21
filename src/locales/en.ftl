@@ -26,11 +26,11 @@ hashtags =
   #JoinTheChange
   #VoltEuropa
   #Volt
-  -
   #RejoinEU
+
   #Volt21
   #IkStemVolt
-  -
+
   #progressiv
   #democracy
   #Europa
@@ -39,7 +39,6 @@ hashtags =
   #EuropeCares
   #VoltForLGBTIAQ
   #ValuesOverPower
-  -
   #FutureMadeInEurope
 
 not_in_use_hashtags =
