@@ -11,15 +11,14 @@ function HashtagChooser({ onChange, getString }) {
 
     useEffect(() => {
         async function loadFrames() {
-
-            hashtags = hashtags.split('\n')
-                .map(tag => tag.trim())
-                .filter(tag => tag.length > 0)
-
             Promise.all(
                 [
                     '',
-                    ...hashtags
+                    ...(
+                        hashtags.split('\n')
+                            .map(tag => tag.trim())
+                            .filter(tag => tag.length > 0)
+                    )
                 ]
                     .map(async frame_filename => {
                         let src = frame_filename
