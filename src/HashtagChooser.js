@@ -12,12 +12,10 @@ function HashtagChooser({ onChange, getString }) {
     useEffect(() => {
         async function loadFrames() {
 
-            console.log('hashtags', hashtags)
             let counter = 0
             hashtags = hashtags.split('\n')
                 .map(tag => tag.trim())
                 .filter(tag => tag.length > 0)
-            console.log('hashtags', hashtags)
 
             Promise.all(
                 [
