@@ -40,4 +40,4 @@ jobs:
         with:
           email: thomas.rosen@me.com
           build_dir: build
-          cname: profile-volt.org
+          cname: www.profile-volt.org
