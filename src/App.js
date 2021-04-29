@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import './App.css'
 import { useDropzone } from 'react-dropzone'
 import mergeImages from 'merge-images'
@@ -9,10 +9,7 @@ import VoltLogoPurple from './VoltLogoPurple.svg'
 import purpleBG from './purpleBG.png'
 import empty_1x1 from './empty_1x1.png'
 
-import 'intl-pluralrules'
-import { AppLocalizationProvider, locales } from './l10n.js'
 import { withLocalization, Localized } from './Localized.js'
-
 
 const frameSize = 1080
 
@@ -405,37 +402,4 @@ function App({ getString, locales, currentLocale, onLanguageChange }) {
         </div>
     )
 }
-const AppLocalized = withLocalization(App)
-
-
-function AppLanguageWrapper() {
-    const [userLocales, setUserLocales] = useState(navigator.languages)
-    const [currentLocale, setCurrentLocale] = useState(null)
-
-    useEffect(() => {
-        let systemLocales = navigator.languages
-        if (!!systemLocales || Array.isArray(systemLocales)) {
-            for (const locale of systemLocales) {
-                window.umami.trackEvent('L: ' + locale) // Log Locale / Languages
-            }
-        }
-    }, [])
-
-    const handleLanguageChange = useCallback(event => {
-        setUserLocales([event.target.dataset.locale])
-    }, [setUserLocales])
-
-    const handleCurrentLocalesChange = useCallback(currentLocales => {
-        setCurrentLocale(currentLocales.length > 0 ? currentLocales[0] : '')
-    }, [setCurrentLocale])
-
-    return <AppLocalizationProvider
-        key="AppLocalizationProvider"
-        userLocales={userLocales}
-        onLocaleChange={handleCurrentLocalesChange}
-    >
-        <AppLocalized locales={locales} currentLocale={currentLocale} onLanguageChange={handleLanguageChange} />
-    </AppLocalizationProvider>
-}
-export default withLocalization(AppLanguageWrapper)
-
+export default withLocalization(App)
