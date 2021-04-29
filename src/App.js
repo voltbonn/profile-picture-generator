@@ -408,7 +408,7 @@ function App({ getString, locales, currentLocale, onLanguageChange }) {
 const AppLocalized = withLocalization(App)
 
 
-function AppWrapper() {
+function AppLanguageWrapper() {
     const [userLocales, setUserLocales] = useState(navigator.languages)
     const [currentLocale, setCurrentLocale] = useState(null)
 
@@ -437,5 +437,5 @@ function AppWrapper() {
         <AppLocalized locales={locales} currentLocale={currentLocale} onLanguageChange={handleLanguageChange} />
     </AppLocalizationProvider>
 }
-export default withLocalization(AppWrapper)
+export default withLocalization(AppLanguageWrapper)
 
