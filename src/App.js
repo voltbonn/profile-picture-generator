@@ -101,7 +101,7 @@ function UmamiLink({ href, name, target, children, ...props }) {
     </a>
 }
 
-function App({ getString }) {
+function App({ getString, locales, currentLocale, onLanguageChange }) {
     const [frame, setFrame] = useState(null)
     const [hashtag, setHashtag] = useState(null)
     const [originalPhoto, setOriginalPhoto] = useState(null)
@@ -382,6 +382,26 @@ function App({ getString }) {
                     <Localized id="link_app_contact" />
                 </UmamiLink>
             </footer>
+
+            {
+                !!locales && !!onLanguageChange
+                ? <div className="locale_chooser">
+                    {
+                        Object.entries(locales)
+                        .map(([locale, name]) => {
+                            return <button
+                                className={locale === currentLocale ? 'isInRow choosen' : 'isInRow'}
+                                key={locale}
+                                data-locale={locale}
+                                onClick={onLanguageChange}
+                            >
+                                {name}
+                            </button>
+                        })
+                    }
+                </div>
+                : null
+            }
         </div>
     )
 }
@@ -414,25 +434,7 @@ function AppWrapper() {
         userLocales={userLocales}
         onLocaleChange={handleCurrentLocalesChange}
     >
-        <>
-            <AppLocalized />
-
-            <div className="locale_chooser">
-                {
-                    Object.entries(locales)
-                    .map(([locale, name]) => {
-                        return <button
-                            className={locale === currentLocale ? 'isInRow choosen' : 'isInRow'}
-                            key={locale}
-                            data-locale={locale}
-                            onClick={handleLanguageChange}
-                        >
-                            {name}
-                        </button>
-                    })
-                }
-            </div>
-        </>
+        <AppLocalized locales={locales} currentLocale={currentLocale} onLanguageChange={handleLanguageChange} />
     </AppLocalizationProvider>
 }
 export default withLocalization(AppWrapper)
