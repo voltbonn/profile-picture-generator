@@ -11,6 +11,7 @@ function FrameChooser({onChange}) {
             Promise.all(
                 [
                     '0xSOM', // SOM = Stripes of Movement
+                    '5xSOM-Pride',
                     '4xSOM-Blue-Red-Yellow-Green',
                     '5xSOM-Blue',
                     '5xSOM-Green',
