@@ -22,6 +22,8 @@ link_source_code = Quellcode
 link_app_contact = Kontakt
 
 hashtags =
+  #VoltForLGBTIAQ
+
   #VoteVolt
   #JoinTheChange
   #VoltEuropa
@@ -38,5 +40,4 @@ hashtags =
   #progressiv
   #Europa
   #EUReform
-  #VoltForLGBTIAQ
   #ValuesOverPower

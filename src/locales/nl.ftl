@@ -23,6 +23,8 @@ link_app_contact = Contact
 
 
 hashtags =
+  #VoltForLGBTIAQ
+
   #VoteVolt
   #JoinTheChange
   #VoltEuropa
@@ -36,5 +38,4 @@ hashtags =
 
   #Europa
   #EUReform
-  #VoltForLGBTIAQ
   #ValuesOverPower
