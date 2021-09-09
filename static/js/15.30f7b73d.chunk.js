@@ -1,0 +1,2 @@
+(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[15],{52:function(e,t,p){"use strict";p.r(t),t.default=p.p+"static/media/2xSOM-Red-Yellow.e190662d.png"}}]);
+//# sourceMappingURL=15.30f7b73d.chunk.js.map
