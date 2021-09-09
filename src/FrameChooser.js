@@ -13,6 +13,7 @@ function FrameChooser({onChange}) {
                     '0xSOM', // SOM = Stripes of Movement
                     '5xSOM-Pride',
                     '4xSOM-Blue-Red-Yellow-Green',
+                    'Volt-Stars',
                     '5xSOM-Blue',
                     '5xSOM-Green',
                     '5xSOM-Red',
