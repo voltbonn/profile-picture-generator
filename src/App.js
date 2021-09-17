@@ -71,7 +71,7 @@ function trigger_download(name, data){
 function UmamiLink({ href, name, target, children, ...props }) {
     const handleClick = useCallback(event => {
 
-        if (name) {
+        if (window.umami && name) {
             window.umami.trackEvent('A: ' + name) // Log Anker / Link
         }
 
@@ -291,9 +291,11 @@ function App({ getString, locales, currentLocale, onLanguageChange }) {
                 const frameName = frame.name || 'No-Frame'
                 const hashtagName = hashtag.name || 'No-Hashtag'
 
-                window.umami.trackEvent('F: ' + frameName) // Log Frame
-                window.umami.trackEvent('H: ' + hashtagName) // Log Hashtag
-                window.umami.trackEvent('C: ' + [frameName, hashtagName].join(' | '))  // Log Combined
+                if (window.umami) {
+                    window.umami.trackEvent('F: ' + frameName) // Log Frame
+                    window.umami.trackEvent('H: ' + hashtagName) // Log Hashtag
+                    window.umami.trackEvent('C: ' + [frameName, hashtagName].join(' | '))  // Log Combined
+                }
             })
 
         }

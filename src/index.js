@@ -12,7 +12,7 @@ function AppLanguageWrapper() {
 
   useEffect(() => {
     let systemLocales = navigator.languages
-    if (!!systemLocales || Array.isArray(systemLocales)) {
+    if (window.umami && (!!systemLocales || Array.isArray(systemLocales))) {
       for (const locale of systemLocales) {
         window.umami.trackEvent('L: ' + locale) // Log Locale / Languages
       }
