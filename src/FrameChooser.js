@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 
-function FrameChooser({onChange}) {
+function FrameChooser({ onChange }) {
     const [frames, setFrames] = useState([])
     const [choosenFrame, setChoosenFrame] = useState(null)
 
