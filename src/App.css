@@ -84,7 +84,8 @@ a:hover{
     transition: transform 0.2s ease;
 }
 .FrameChooser .frame img{
-    height: 12vh;
+    height: 24vh;
+    /* height: 12vh; */
     pointer-events: none;
 }
 .FrameChooser .frame:hover{
