@@ -340,8 +340,14 @@ function App({ getString, locales, currentLocale, onLanguageChange }) {
             {true || !!originalPhoto ? (<>
                 <h2><Localized id="title_choose_frame" /></h2>
                 <FrameChooser onChange={handleFrame} />
-                {/* <h2><Localized id="title_choose_hashtag" /></h2> */}
-                {/* <HashtagChooser onChange={handleHashtag} /> */}
+                {
+                    (frameURL || '').startsWith('/static/media/btw_')
+                    ? null
+                    : <>
+                        <h2><Localized id="title_choose_hashtag" /></h2>
+                        <HashtagChooser onChange={handleHashtag} />
+                    </>
+                }
             </>) : null}
 
             {!!originalPhoto && !!frameURL ? (<>
