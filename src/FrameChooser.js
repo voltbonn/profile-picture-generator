@@ -10,10 +10,16 @@ function FrameChooser({onChange}) {
         async function loadFrames(){
             Promise.all(
                 [
-                    '0xSOM', // SOM = Stripes of Movement
-                    '5xSOM-Pride',
+                    'btw_VoteVolt_Balken',
+                    'btw_Meine_Stimme_Balken',
                     '4xSOM-Blue-Red-Yellow-Green',
+                    'btw_VoteVolt_Sterne_bunt',
+                    'btw_Meine_Stimme_Sterne_bunt',
                     'Volt-Stars',
+                    'btw_VoteVolt_Sterne_lila',
+                    'btw_Meine_Stimme_Sterne_lila',
+                    '0xSOM', // SOM = Stripes of Movement
+                    // '5xSOM-Pride',
                     '5xSOM-Blue',
                     '5xSOM-Green',
                     '5xSOM-Red',
