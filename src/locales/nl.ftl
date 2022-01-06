@@ -24,7 +24,8 @@ link_app_contact = Contact
 
 hashtags =
   #VoltForLGBTIAQ
-  #GenerationEuropa
+  #GeneratieVolt
+  #GeneratieEuropa
 
   #VoteVolt
   #JoinTheChange
