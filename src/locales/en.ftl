@@ -32,7 +32,6 @@ hashtags =
   #EuropeCares
   #FutureMadeInEurope
 
-  #Volt21
   #RejoinEU
 
   #progressiv

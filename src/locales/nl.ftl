@@ -33,7 +33,6 @@ hashtags =
   #EuropeCares
   #FutureMadeInEurope
 
-  #Volt21
   #IkStemVolt
   stemvolt.nl
 
