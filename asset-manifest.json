@@ -3,8 +3,8 @@
     "main.css": "/static/css/main.cc86ad2e.chunk.css",
     "main.js": "/static/js/main.7c298977.chunk.js",
     "main.js.map": "/static/js/main.7c298977.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1ecc8b3c.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1ecc8b3c.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bb81121a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bb81121a.js.map",
     "static/js/2.02aed69b.chunk.js": "/static/js/2.02aed69b.chunk.js",
     "static/js/2.02aed69b.chunk.js.map": "/static/js/2.02aed69b.chunk.js.map",
     "static/js/3.2469ec98.chunk.js": "/static/js/3.2469ec98.chunk.js",
@@ -101,8 +101,8 @@
     "static/js/48.0d79288c.chunk.js.map": "/static/js/48.0d79288c.chunk.js.map",
     "static/js/49.1ab72649.chunk.js": "/static/js/49.1ab72649.chunk.js",
     "static/js/49.1ab72649.chunk.js.map": "/static/js/49.1ab72649.chunk.js.map",
-    "static/js/50.02a57536.chunk.js": "/static/js/50.02a57536.chunk.js",
-    "static/js/50.02a57536.chunk.js.map": "/static/js/50.02a57536.chunk.js.map",
+    "static/js/50.3a3ea9cf.chunk.js": "/static/js/50.3a3ea9cf.chunk.js",
+    "static/js/50.3a3ea9cf.chunk.js.map": "/static/js/50.3a3ea9cf.chunk.js.map",
     "static/js/51.061b609a.chunk.js": "/static/js/51.061b609a.chunk.js",
     "static/js/51.061b609a.chunk.js.map": "/static/js/51.061b609a.chunk.js.map",
     "static/js/52.955af917.chunk.js": "/static/js/52.955af917.chunk.js",
@@ -118,7 +118,6 @@
     "index.html": "/index.html",
     "static/css/main.cc86ad2e.chunk.css.map": "/static/css/main.cc86ad2e.chunk.css.map",
     "static/js/2.02aed69b.chunk.js.LICENSE.txt": "/static/js/2.02aed69b.chunk.js.LICENSE.txt",
-    "static/media/#WirWerdenLaut.png": "/static/media/#WirWerdenLaut.e98c4966.png",
     "static/media/2xSOM-Blue-Green.png": "/static/media/2xSOM-Blue-Green.1377f3a8.png",
     "static/media/2xSOM-Red-Yellow.png": "/static/media/2xSOM-Red-Yellow.e190662d.png",
     "static/media/4xSOM-Blue-Red-Yellow-Green.png": "/static/media/4xSOM-Blue-Red-Yellow-Green.71b78053.png",
@@ -147,7 +146,7 @@
     "static/media/ru.ftl": "/static/media/ru.9be0d24d.ftl"
   },
   "entrypoints": [
-    "static/js/runtime-main.1ecc8b3c.js",
+    "static/js/runtime-main.bb81121a.js",
     "static/js/2.02aed69b.chunk.js",
     "static/css/main.cc86ad2e.chunk.css",
     "static/js/main.7c298977.chunk.js"
