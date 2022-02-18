@@ -22,6 +22,7 @@ link_source_code = Quellcode
 link_app_contact = Kontakt
 
 hashtags =
+  #WirWerdenLaut
   #VoltForLGBTIAQ
   #GenerationEuropa
 
