@@ -10,6 +10,7 @@ function FrameChooser({ onChange }) {
         async function loadFrames(){
             Promise.all(
                 [
+                    'ukraine',
                     // 'btw_VoteVolt_Balken',
                     // 'btw_Meine_Stimme_Balken',
                     '4xSOM-Blue-Red-Yellow-Green',
