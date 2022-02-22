@@ -22,6 +22,8 @@ link_source_code = Source Code
 link_app_contact = Contact
 
 hashtags =
+  PeaceInEurope
+
   #VoltForLGBTIAQ
   #GenerationEuropa
 
