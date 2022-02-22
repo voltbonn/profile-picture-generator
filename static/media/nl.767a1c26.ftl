@@ -23,6 +23,8 @@ link_app_contact = Contact
 
 
 hashtags =
+  PeaceInEurope
+  
   #VoltForLGBTIAQ
   #GeneratieVolt
   #GeneratieEuropa
