@@ -1,0 +1,2 @@
+(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[30],{67:function(e,t,i){"use strict";i.r(t),t.default=i.p+"static/media/btw_VoteVolt_Sterne_lila.02f0580d.png"}}]);
+//# sourceMappingURL=30.41812a84.chunk.js.map
