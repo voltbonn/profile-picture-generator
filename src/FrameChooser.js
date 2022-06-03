@@ -30,6 +30,7 @@ function FrameChooser({ onChange }) {
                     // '2xSOM-Blue-Green',
                     // '2xSOM-Red-Yellow',
                     '4xSOM-Blue-Red-Yellow-Green',
+                    '4xSOM-Blue-Red-Yellow-Green-Overflow',
                 ]
                 .map(async frame_filename => {
                     return {
