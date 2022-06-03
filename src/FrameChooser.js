@@ -10,11 +10,10 @@ function FrameChooser({ onChange }) {
         async function loadFrames(){
             Promise.all(
                 [
+                    '5xSOM-Pride',
                     'ukraine',
                     // 'btw_VoteVolt_Balken',
                     // 'btw_Meine_Stimme_Balken',
-                    '4xSOM-Blue-Red-Yellow-Green',
-                    '5xSOM-Pride',
                     // 'btw_VoteVolt_Sterne_bunt',
                     // 'btw_Meine_Stimme_Sterne_bunt',
                     'Volt-Stars',
@@ -28,6 +27,7 @@ function FrameChooser({ onChange }) {
                     // '5xSOM-White',
                     // '2xSOM-Blue-Green',
                     // '2xSOM-Red-Yellow',
+                    '4xSOM-Blue-Red-Yellow-Green',
                 ]
                 .map(async frame_filename => {
                     return {
