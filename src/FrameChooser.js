@@ -10,6 +10,8 @@ function FrameChooser({ onChange }) {
         async function loadFrames(){
             Promise.all(
                 [
+                    'pride-2022-1',
+                    'pride-2022-2',
                     '5xSOM-Pride',
                     'ukraine',
                     // 'btw_VoteVolt_Balken',
