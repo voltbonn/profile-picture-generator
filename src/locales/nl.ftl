@@ -23,6 +23,7 @@ link_app_contact = Contact
 
 
 hashtags =
+  #VoltGA
   PeaceInEurope
   
   #VoltForLGBTIAQ
