@@ -14,7 +14,7 @@ function AppLanguageWrapper() {
     let systemLocales = navigator.languages
     if (window.umami && (!!systemLocales || Array.isArray(systemLocales))) {
       for (const locale of systemLocales) {
-        window.umami.trackEvent('L: ' + locale) // Log Locale / Languages
+        window.umami.track('L: ' + locale) // Log Locale / Languages
       }
     }
   }, [])

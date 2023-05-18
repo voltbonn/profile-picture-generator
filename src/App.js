@@ -72,7 +72,7 @@ function UmamiLink({ href, name, target, children, ...props }) {
     const handleClick = useCallback(event => {
 
         if (window.umami && name) {
-            window.umami.trackEvent('A: ' + name) // Log Anker / Link
+            window.umami.track('A: ' + name) // Log Anker / Link
         }
 
         // follow link
@@ -292,9 +292,9 @@ function App({ getString, locales, currentLocale, onLanguageChange }) {
                 const hashtagName = hashtag.name || 'No-Hashtag'
 
                 if (window.umami) {
-                    window.umami.trackEvent('F: ' + frameName) // Log Frame
-                    window.umami.trackEvent('H: ' + hashtagName) // Log Hashtag
-                    window.umami.trackEvent('C: ' + [frameName, hashtagName].join(' | '))  // Log Combined
+                    window.umami.track('F: ' + frameName) // Log Frame
+                    window.umami.track('H: ' + hashtagName) // Log Hashtag
+                    window.umami.track('C: ' + [frameName, hashtagName].join(' | '))  // Log Combined
                 }
             })
 
