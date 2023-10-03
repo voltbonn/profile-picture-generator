@@ -30,8 +30,8 @@ function FrameChooser({ onChange }) {
                     '4xSOM-Blue-Red-Yellow-Green',
                     '4xSOM-Blue-Red-Yellow-Green-Overflow',
                     'RectanglePurple',
-                    'pride-2022-1',
-                    'pride-2022-2',
+                    // 'pride-2022-1',
+                    // 'pride-2022-2',
                 ]
                 .map(async frame_filename => {
                     return {
