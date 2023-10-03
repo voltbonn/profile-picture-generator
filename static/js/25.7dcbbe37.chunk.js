@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[25],{62:function(e,t,i){"use strict";i.r(t),t.default=i.p+"static/media/btw_Meine_Stimme_Balken.6a32a008.png"}}]);
-//# sourceMappingURL=25.7dcbbe37.chunk.js.map
