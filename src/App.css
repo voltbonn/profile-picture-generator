@@ -182,6 +182,8 @@ button.choosen:after {
     font-size: 0;
     cursor: move;
     overflow: hidden;
+    width: calc(36vh - 1px);
+    height: calc(36vh - 1px);
     background: var(--editor-purple);
 }
 .Editor .background{
@@ -195,7 +197,7 @@ button.choosen:after {
     position: relative;
     width: 36vh;
     height: 36vh;
-    transform: translate(0.1px, 0.1px);
+    /* transform: translate(0.1px, 0.1px); */
 }
 .Editor .hashtag{
     pointer-events: none;
@@ -204,6 +206,6 @@ button.choosen:after {
     left: 0;
     width: 100%;
     height: 100%;
-    transform: translate(0.1px, 0.1px);
+    /* transform: translate(0.1px, 0.1px); */
 }
 
