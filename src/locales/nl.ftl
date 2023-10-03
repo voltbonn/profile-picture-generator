@@ -23,20 +23,20 @@ link_app_contact = Contact
 
 
 hashtags =
-  #VoltGA
+  #VoteVolt
   IVotedFromAbroad
   PeaceInEurope
-  
+
   #VoltForLGBTIAQ
   #GeneratieVolt
   #GeneratieEuropa
 
-  #VoteVolt
   #JoinTheChange
   #VoltEuropa
   #Volt
   #EuropeCares
   #FutureMadeInEurope
+  #VoltGA
 
   #IkStemVolt
   stemvolt.nl

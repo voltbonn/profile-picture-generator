@@ -22,7 +22,7 @@ link_source_code = Quellcode
 link_app_contact = Kontakt
 
 hashtags =
-  #VoltGA
+  #VoteVolt
 
   #ZweitstimmeVolt
   FriedenInEuropa
@@ -31,13 +31,13 @@ hashtags =
   #VoltForLGBTIAQ
   #GenerationEuropa
 
-  #VoteVolt
   #JoinTheChange
   #VoltEuropa
   #Volt
   #EuropeCares
   #FutureMadeInEurope
   IVotedFromAbroad
+  #VoltGA
 
   #DeineWahl
   #JetztBistDuDran

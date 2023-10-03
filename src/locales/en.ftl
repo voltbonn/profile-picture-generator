@@ -22,19 +22,19 @@ link_source_code = Source Code
 link_app_contact = Contact
 
 hashtags =
-  #VoltGA
+  #VoteVolt
   IVotedFromAbroad
   PeaceInEurope
 
   #VoltForLGBTIAQ
   #GenerationEuropa
 
-  #VoteVolt
   #JoinTheChange
   #VoltEuropa
   #Volt
   #EuropeCares
   #FutureMadeInEurope
+  #VoltGA
 
   #RejoinEU
 
