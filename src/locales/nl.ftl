@@ -28,10 +28,6 @@ hashtags =
   IVotedFromAbroad
   PeaceInEurope
 
-  #VoltForLGBTIAQ
-  #GeneratieVolt
-  #GeneratieEuropa
-
   #JoinTheChange
   #VoltEuropa
   #EuropeCares
@@ -41,6 +37,11 @@ hashtags =
   #IkStemVolt
   stemvolt.nl
 
+old_hashtag =
+  #ValuesOverPower
+  #VoltForLGBTIAQ
+  #GeneratieVolt
+  #GeneratieEuropa
   #Europa
   #EUReform
-  #ValuesOverPower
+  #Volt

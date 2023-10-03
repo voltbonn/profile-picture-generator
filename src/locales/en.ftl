@@ -27,9 +27,6 @@ hashtags =
   IVotedFromAbroad
   PeaceInEurope
 
-  #VoltForLGBTIAQ
-  #GenerationEuropa
-
   #JoinTheChange
   #VoltEuropa
   #EuropeCares
@@ -37,10 +34,14 @@ hashtags =
   #VoltGA
 
   #RejoinEU
-
-  #progressiv
-  #democracy
   #Europa
   #EUReform
-  #European
+
+old_hashtag =
+  #progressiv
+  #democracy
   #ValuesOverPower
+  #European
+  #VoltForLGBTIAQ
+  #GenerationEuropa
+  #Volt

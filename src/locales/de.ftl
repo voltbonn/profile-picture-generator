@@ -27,24 +27,25 @@ hashtags =
 
   #ZweitstimmeVolt
   FriedenInEuropa
-  #WirWerdenLaut
-
-  #VoltForLGBTIAQ
-  #GenerationEuropa
 
   #JoinTheChange
   #VoltEuropa
   #EuropeCares
   #FutureMadeInEurope
-  IVotedFromAbroad
   #VoltGA
 
+  #EUReform
+  IVotedFromAbroad
+
+old_hashtag =
+  #WirWerdenLaut
   #DeineWahl
   #JetztBistDuDran
-
   #paneuropäisch
   #pragmatisch
   #progressiv
-  #Europa
-  #EUReform
   #ValuesOverPower
+  #VoltForLGBTIAQ
+  #Europa
+  #GenerationEuropa
+  #Volt
