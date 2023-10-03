@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[27],{64:function(e,t,i){"use strict";i.r(t),t.default=i.p+"static/media/btw_Meine_Stimme_Sterne_bunt.bd2e2e81.png"}}]);
-//# sourceMappingURL=27.316875c4.chunk.js.map

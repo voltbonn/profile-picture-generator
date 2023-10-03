@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[66],{103:function(e,t,p){"use strict";p.r(t),t.default=p.p+"static/media/Volt.97a5753e.png"}}]);
-//# sourceMappingURL=66.12278fed.chunk.js.map

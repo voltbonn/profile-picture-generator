@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[34],{71:function(e,t,i){"use strict";i.r(t),t.default=i.p+"static/media/ukraine.d9765a7e.png"}}]);
-//# sourceMappingURL=34.02a8823d.chunk.js.map
