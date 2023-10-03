@@ -10,31 +10,31 @@ function FrameChooser({ onChange }) {
         async function loadFrames(){
             Promise.all(
                 [
-                    '5xSOM-Pride',
+                    '0xSOM', // SOM = Stripes of Movement
+                    '4xSOM-Blue-Red-Yellow-Green-Overflow',
+                    '4xSOM-Blue-Red-Yellow-Green',
                     'ukraine',
-                    // 'btw_VoteVolt_Balken',
-                    // 'btw_Meine_Stimme_Balken',
-                    // 'btw_VoteVolt_Sterne_bunt',
-                    // 'btw_Meine_Stimme_Sterne_bunt',
                     'Mixed_Bars_Overflow_Pride',
                     'Mixed_Bars_Overflow_Trans',
                     'Mixed_Bars_Overflow_Non_Binary',
                     'Volt-Stars',
-                    // 'btw_VoteVolt_Sterne_lila',
-                    // 'btw_Meine_Stimme_Sterne_lila',
-                    '0xSOM', // SOM = Stripes of Movement
+                    'RectanglePurple',
                     '5xSOM-Blue',
                     '5xSOM-Green',
                     '5xSOM-Red',
                     '5xSOM-Yellow',
+                    // 'pride-2022-1',
+                    // 'pride-2022-2',
+                    // '5xSOM-Pride',
                     // '5xSOM-White',
                     // '2xSOM-Blue-Green',
                     // '2xSOM-Red-Yellow',
-                    '4xSOM-Blue-Red-Yellow-Green',
-                    '4xSOM-Blue-Red-Yellow-Green-Overflow',
-                    'RectanglePurple',
-                    // 'pride-2022-1',
-                    // 'pride-2022-2',
+                    // 'btw_VoteVolt_Balken',
+                    // 'btw_Meine_Stimme_Balken',
+                    // 'btw_VoteVolt_Sterne_bunt',
+                    // 'btw_Meine_Stimme_Sterne_bunt',
+                    // 'btw_VoteVolt_Sterne_lila',
+                    // 'btw_Meine_Stimme_Sterne_lila',
                 ]
                 .map(async frame_filename => {
                     return {
