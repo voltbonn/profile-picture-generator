@@ -1,2 +1,0 @@
-(this["webpackJsonpprofile-picture-generator"]=this["webpackJsonpprofile-picture-generator"]||[]).push([[4],{105:function(e,t,i){"use strict";i.r(t),t.default=i.p+"static/media/en.bbc840ca.ftl"}}]);
-//# sourceMappingURL=4.00e98f27.chunk.js.map

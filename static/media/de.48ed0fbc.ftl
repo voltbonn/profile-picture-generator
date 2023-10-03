@@ -22,29 +22,30 @@ link_source_code = Quellcode
 link_app_contact = Kontakt
 
 hashtags =
+  Volt
   #VoteVolt
 
   #ZweitstimmeVolt
   FriedenInEuropa
-  #WirWerdenLaut
-
-  #VoltForLGBTIAQ
-  #GenerationEuropa
 
   #JoinTheChange
   #VoltEuropa
-  #Volt
   #EuropeCares
   #FutureMadeInEurope
-  IVotedFromAbroad
   #VoltGA
 
+  #EUReform
+  IVotedFromAbroad
+
+old_hashtag =
+  #WirWerdenLaut
   #DeineWahl
   #JetztBistDuDran
-
   #paneuropäisch
   #pragmatisch
   #progressiv
-  #Europa
-  #EUReform
   #ValuesOverPower
+  #VoltForLGBTIAQ
+  #Europa
+  #GenerationEuropa
+  #Volt
