@@ -1,6 +1,12 @@
 import { useState, useEffect, useCallback } from 'react'
 import { withLocalization } from './Localized.js'
 
+const hashtagNameReplacers = {
+    'IVotedFromAbroad': 'I voted from abroad!',
+    'PeaceInEurope': 'Peace in Europe',
+    'FriedenInEuropa': 'Frieden in Europa',
+}
+
 function HashtagChooser({ onChange, getString }) {
     const [frames, setFrames] = useState([])
     const [choosenFrame, setChoosenFrame] = useState(null)
@@ -25,8 +31,11 @@ function HashtagChooser({ onChange, getString }) {
                         if (frame_filename !== '') {
                             src = (await import(`./hashtags/${frame_filename}.png`)).default
                         }
+
+                        const name = hashtagNameReplacers[frame_filename] || frame_filename
+
                         return {
-                            name: frame_filename,
+                            name,
                             src
                         }
                     })
