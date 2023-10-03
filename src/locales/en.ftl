@@ -22,6 +22,7 @@ link_source_code = Source Code
 link_app_contact = Contact
 
 hashtags =
+  Volt
   #VoteVolt
   IVotedFromAbroad
   PeaceInEurope
@@ -31,7 +32,6 @@ hashtags =
 
   #JoinTheChange
   #VoltEuropa
-  #Volt
   #EuropeCares
   #FutureMadeInEurope
   #VoltGA
