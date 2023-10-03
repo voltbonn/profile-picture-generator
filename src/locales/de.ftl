@@ -37,6 +37,7 @@ hashtags =
   #Volt
   #EuropeCares
   #FutureMadeInEurope
+  IVotedFromAbroad
 
   #DeineWahl
   #JetztBistDuDran

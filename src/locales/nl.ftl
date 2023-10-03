@@ -24,6 +24,7 @@ link_app_contact = Contact
 
 hashtags =
   #VoltGA
+  IVotedFromAbroad
   PeaceInEurope
   
   #VoltForLGBTIAQ
