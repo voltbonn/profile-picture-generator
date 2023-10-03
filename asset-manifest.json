@@ -3,8 +3,8 @@
     "main.css": "/static/css/main.27cf20e8.chunk.css",
     "main.js": "/static/js/main.4435a7aa.chunk.js",
     "main.js.map": "/static/js/main.4435a7aa.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.a3cc4f85.js",
-    "runtime-main.js.map": "/static/js/runtime-main.a3cc4f85.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9f12e4fc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9f12e4fc.js.map",
     "static/js/2.02aed69b.chunk.js": "/static/js/2.02aed69b.chunk.js",
     "static/js/2.02aed69b.chunk.js.map": "/static/js/2.02aed69b.chunk.js.map",
     "static/js/3.f8d10e7b.chunk.js": "/static/js/3.f8d10e7b.chunk.js",
@@ -133,8 +133,8 @@
     "static/js/64.f8205418.chunk.js.map": "/static/js/64.f8205418.chunk.js.map",
     "static/js/65.3a5a1995.chunk.js": "/static/js/65.3a5a1995.chunk.js",
     "static/js/65.3a5a1995.chunk.js.map": "/static/js/65.3a5a1995.chunk.js.map",
-    "static/js/66.bdbee425.chunk.js": "/static/js/66.bdbee425.chunk.js",
-    "static/js/66.bdbee425.chunk.js.map": "/static/js/66.bdbee425.chunk.js.map",
+    "static/js/66.12278fed.chunk.js": "/static/js/66.12278fed.chunk.js",
+    "static/js/66.12278fed.chunk.js.map": "/static/js/66.12278fed.chunk.js.map",
     "static/js/67.fce2b980.chunk.js": "/static/js/67.fce2b980.chunk.js",
     "static/js/67.fce2b980.chunk.js.map": "/static/js/67.fce2b980.chunk.js.map",
     "index.html": "/index.html",
@@ -151,6 +151,7 @@
     "static/media/5xSOM-White.png": "/static/media/5xSOM-White.fd0c8515.png",
     "static/media/5xSOM-Yellow.png": "/static/media/5xSOM-Yellow.418aeccb.png",
     "static/media/Volt-Stars.png": "/static/media/Volt-Stars.f6dbb8db.png",
+    "static/media/Volt.png": "/static/media/Volt.97a5753e.png",
     "static/media/VoltLogoPurple.125355f6.svg": "/static/media/VoltLogoPurple.125355f6.svg",
     "static/media/btw_Meine_Stimme_Balken.png": "/static/media/btw_Meine_Stimme_Balken.6a32a008.png",
     "static/media/btw_Meine_Stimme_Sterne_bunt.png": "/static/media/btw_Meine_Stimme_Sterne_bunt.bd2e2e81.png",
@@ -172,7 +173,7 @@
     "static/media/ukraine.png": "/static/media/ukraine.d9765a7e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a3cc4f85.js",
+    "static/js/runtime-main.9f12e4fc.js",
     "static/js/2.02aed69b.chunk.js",
     "static/css/main.27cf20e8.chunk.css",
     "static/js/main.4435a7aa.chunk.js"
