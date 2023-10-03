@@ -10,8 +10,6 @@ function FrameChooser({ onChange }) {
         async function loadFrames(){
             Promise.all(
                 [
-                    'pride-2022-1',
-                    'pride-2022-2',
                     '5xSOM-Pride',
                     'ukraine',
                     // 'btw_VoteVolt_Balken',
@@ -31,6 +29,8 @@ function FrameChooser({ onChange }) {
                     // '2xSOM-Red-Yellow',
                     '4xSOM-Blue-Red-Yellow-Green',
                     '4xSOM-Blue-Red-Yellow-Green-Overflow',
+                    'pride-2022-1',
+                    'pride-2022-2',
                 ]
                 .map(async frame_filename => {
                     return {
